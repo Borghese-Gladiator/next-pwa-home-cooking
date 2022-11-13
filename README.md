@@ -1,5 +1,5 @@
 # SQL Home Cooking
-Simplified weekly shopping list so I can write list of things I want to eat and have query generate a sorted shopping list
+Simplify weekly shopping - I write meals I want and use query to generate sorted shopping list
 
 Pro
 - Generate shopping list via one SQL query
