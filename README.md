@@ -32,42 +32,19 @@ Execute SQL file on remote
 psql -h host -U username -d myDataBase -a -f myInsertFile
 ```
 
-#### Postgres Import/Export
-Import
+Postgres import
 ```bash
 export PGPASSWORD=<>
 pg_dump --host <> --port 5432 --username <> --dbname <> --schema public --format custom --schema-only --file schema.dump --no-privileges --no-security-labels --no-tablespaces --verbose
 pg_dump --host <> --port 5432 --username <> --dbname <> --schema public --format custom --data-only --file data.dump --no-privileges --no-security-labels --no-tablespaces --verbose
 ```
 
-Export
+Postgres export
 ```bash
 SERVICE_IP=<127.0.0.1:5432>
 export PGPASSWORD=<>
 pg_restore --host $SERVICE_IP --port 5432 --user postgres --dbname postgres --no-owner --no-privileges --no-security-labels --clean --if-exists --verbose schema.dump
 pg_restore --host $SERVICE_IP --port 5432 --user postgres --dbname postgres --no-owner --no-privileges --no-security-labels --clean --if-exists --disable-triggers --verbose data.dump
-```
-
-#### SQL Import/Export
-This does not preserve relationships (so not very useful unless extracting data from one table)
-```sql
--- Import data from CSV files
-COPY ingredients FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meal_ingredient_map FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meal_recipe_map FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meals FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY recipe_ingredient_map FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY recipes FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY restaurants FROM '<filepath.csv>' DELIMITER ',' CSV HEADER;
-
--- Export data to CSV files
-COPY ingredients TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meal_ingredient_map TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meal_recipe_map TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY meals TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY recipe_ingredient_map TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY recipes TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
-COPY restaurants TO '<filepath.csv>' DELIMITER ',' CSV HEADER;
 ```
 
 ---
