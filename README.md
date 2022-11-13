@@ -11,11 +11,14 @@ Con
 ## Usage
 1. Create an account for a Postgres cloud SQL database provider
 2. Connect to cloud SQL database via SQL client using URI information - `postgres://<db_username>:<db_password>@<db_host>:5432`
-3. Run data_bootstrapping.sql - `psql -h host -U username -d myDataBase -a -f myInsertFile`
-4. Run query_shopping_list.sql - `psql -h host -U username -d myDataBase -a -f myInsertFile`
+3. Run data_bootstrapping.sql - `psql -h host -U username -d myDataBase -a -f query/data_bootstrapping.sql`
+4. Run query_shopping_list.sql - `psql -h host -U username -d myDataBase -a -f query/query_shopping_list.sql`
 
 My setup
-- ElephantSQL - Postgres cloud SQL database to save data for free (2 GB limit)
+- ElephantSQL
+  - PRO - free Postgres cloud SQL database
+  - CON - 2 GB limit
+  - CON - PostgreSQL 11.12
 - DBGate4 - SQL client (I recommend PyCharm's Database tab as a great alternative)
 
 ## Table Structure
