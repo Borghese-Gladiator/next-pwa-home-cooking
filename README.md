@@ -11,8 +11,8 @@ Con
 ## Usage
 1. Create an account for a Postgres cloud SQL database provider
 2. Connect to cloud SQL database via SQL client using URI information - `postgres://<db_username>:<db_password>@<db_host>:5432`
-3. Run data_bootstrapping.sql - `psql -h host -U username -d myDataBase -a -f myInsertFile`
-4. Run query_shopping_list.sql - `psql -h host -U username -d myDataBase -a -f myInsertFile`
+3. Bootstrap tables and Insert data - `psql -h host -U username -d myDataBase -a -f myInsertFile`
+4. Get example list - `psql -h host -U username -d myDataBase -a -f myInsertFile`
 
 My setup
 - ElephantSQL - Postgres cloud SQL database to save data for free (2 GB limit)
