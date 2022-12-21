@@ -431,6 +431,4 @@ VALUES
 	('sapporo'),
 	('chipotle');
 
-/*
- DROP TABLE IF EXISTS ingredients, recipes, recipe_ingredient_map, meals, meal_recipe_map, meal_ingredient_map, restaurants CASCADE;
- */
+-- DROP TABLE IF EXISTS ingredients, recipes, recipe_ingredient_map, meals, meal_recipe_map, meal_ingredient_map, restaurants CASCADE;
