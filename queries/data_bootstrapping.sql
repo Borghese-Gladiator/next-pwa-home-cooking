@@ -60,20 +60,17 @@ CREATE TRIGGER update_recipe_ingredient_map_updated_at BEFORE
 UPDATE
 	ON recipe_ingredient_map FOR EACH ROW EXECUTE PROCEDURE update_modified_column();
 
-CREATE
-OR REPLACE FUNCTION update_column_updated_at() RETURNS TRIGGER AS $ $ BEGIN IF row(NEW.*) IS DISTINCT
-FROM
-	row(OLD.*) THEN NEW.updated_at = now();
-
-RETURN NEW;
-
-ELSE RETURN OLD;
-
-END IF;
-
+CREATE OR REPLACE FUNCTION update_column_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+	IF row(NEW.*) IS DISTINCT FROM row(OLD.*) THEN
+		NEW.updated_at = now(); 
+		RETURN NEW;
+	ELSE
+		RETURN OLD;
+	END IF;
 END;
-
-$ $ language 'plpgsql';
+$$ language 'plpgsql';
 
 INSERT INTO
 	ingredients (name, store_location)
