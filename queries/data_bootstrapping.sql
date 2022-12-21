@@ -135,7 +135,6 @@ VALUES
 	('ground pork', DEFAULT, DEFAULT),
 	('ground beef', DEFAULT, DEFAULT),
 	('eggs', 'dairy', DEFAULT),
-	('paprika', DEFAULT, DEFAULT),
 	('turmeric', DEFAULT, DEFAULT),
 	('lettuce', 'produce', DEFAULT),
 	('pickles', DEFAULT, DEFAULT),
@@ -188,12 +187,12 @@ VALUES
 	('onion powder', DEFAULT, DEFAULT),
 	('soy sauce', DEFAULT, DEFAULT),
 	('soy sauce paste', DEFAULT, DEFAULT),
-	('酱油', DEFAULT, DEFAULT),
 	('酱油膏', DEFAULT, DEFAULT),
 	('shrimp', DEFAULT, DEFAULT),
 	('olive oil', DEFAULT, DEFAULT),
 	('salt', DEFAULT, DEFAULT),
-	('onions', 'produce', DEFAULT) ('canned tomatoes', DEFAULT, DEFAULT);
+	('onions', 'produce', DEFAULT),
+	('canned tomatoes', DEFAULT, DEFAULT);
 
 INSERT INTO
 	recipes (name)
@@ -365,8 +364,7 @@ WITH inputvalues(recipe, ingredient) AS (
 		('shakshuka', 'onions'),
 		('shakshuka', 'bell peppers'),
 		('shakshuka', 'feta cheese'),
-		('shakshuka', 'canned tomatoes'),
-		('shakshuka', 'onions')
+		('shakshuka', 'canned tomatoes')
 )
 INSERT INTO
 	recipe_ingredient_map (recipe_id, ingredient_id)
