@@ -362,6 +362,8 @@ WITH inputvalues(recipe, ingredient) AS (
 		('shakshuka', 'feta cheese'),
 		('shakshuka', 'canned tomatoes'),
 		('shakshuka', 'eggs'),
+		('shakshuka', 'cumin'),
+		('shakshuka', 'cilantro'),
 		('shrimp scampi', 'olive oil'),
 		('shrimp scampi', 'butter'),
 		('shrimp scampi', 'garlic'),
