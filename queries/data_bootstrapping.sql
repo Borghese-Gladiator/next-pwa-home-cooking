@@ -75,6 +75,7 @@ $$ language 'plpgsql';
 INSERT INTO
 	ingredients (name, store_location)
 VALUES
+	('frozen Italian meatballs', DEFAULT),
 	('spaghetti', DEFAULT),
 	('tomato sauce', DEFAULT),
 	('tomato paste', DEFAULT),
@@ -188,11 +189,17 @@ VALUES
 	('canned tomatoes', DEFAULT),
 	('chicken bouillon', DEFAULT),
 	('lemons', 'produce'),
-	('butter', 'dairy');
+	('butter', 'dairy'),
+	('french bread', DEFAULT),
+  ('肉松', DEFAULT),
+  ('cucumbers', DEFAULT);
 
 INSERT INTO
 	recipes (name)
 VALUES
+	('fancy spaghetti and meatballs'),
+	('strapatsada'),
+  ('肉松三明治'),
 	('火锅'),
 	('牛肉面'),
 	('sausage egg and cheese bagel'),
@@ -224,6 +231,15 @@ VALUES
 
 WITH inputvalues(recipe, ingredient) AS (
 	VALUES
+		('strapatsada', 'egg'),
+		('strapatsada', 'tomatoes'),
+		('strapatsada', 'olive oili'),
+		('strapatsada', 'feta cheese'),
+		('strapatsada', 'french bread'),
+		('肉松三明治', '肉松'),
+		('肉松三明治', 'whole wheat bread'),
+		('肉松三明治', 'cucumbers'),
+		('肉松三明治', 'mayonnaise'),
 		('火锅', '丸子'),
 		('火锅', '大白菜'),
 		('火锅', '香菇'),
@@ -236,8 +252,18 @@ WITH inputvalues(recipe, ingredient) AS (
 		('spaghetti and meatballs', 'spaghetti'),
 		('spaghetti and meatballs', 'tomato sauce'),
 		('spaghetti and meatballs', 'onions'),
-		('spaghetti and meatballs', 'meatballs'),
+		('spaghetti and meatballs', 'frozen Italian meatballs'),
 		('spaghetti and meatballs', 'olive oil'),
+		('spaghetti and meatballs', 'pecorino romano'),
+		('fancy spaghetti and meatballs', 'frozen Italian meatballs'),
+		('fancy spaghetti and meatballs', 'tomato paste'),
+		('fancy spaghetti and meatballs', 'tomatoes'),
+		('fancy spaghetti and meatballs', 'shallots'),
+		('fancy spaghetti and meatballs', 'garlic'),
+		('fancy spaghetti and meatballs', 'parsley'),
+		('fancy spaghetti and meatballs', 'basil'),
+		('fancy spaghetti and meatballs', 'fresh mozzarella cheese'),
+		('fancy spaghetti and meatballs', 'pecorino romano'),
 		('garlic bread', 'olive oil'),
 		('garlic bread', 'baguette'),
 		('garlic bread', 'garlic'),
@@ -433,6 +459,7 @@ FROM
 INSERT INTO
 	restaurants(name)
 VALUES
+	('HMart - Go Go Curry')
 	('pizza'),
 	('hyderabad palace'),
 	('sichuan gourmet'),
