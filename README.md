@@ -1,6 +1,22 @@
 # SQL Home Cooking
 Simplify weekly shopping - I write meals I want and use query to generate sorted shopping list
 
+## Usage
+1. Create an account for a Postgres cloud SQL database provider
+2. Add URI information in app/.env Connect to cloud SQL database via SQL client using URI information - `postgres://<db_username>:<db_password>@<db_host>:5432`
+
+
+
+## History
+Originally, I thought I would have no app and just use SQL to directly query my shopping list, but it's way too much of a pain to find a SQL Client for mobile that I like. Since I'm too lazy to actually use this to create a shopping list beforehand and then put it in Google Keep Notes, I wrote up a PWA so I can do one click on mobile to select the meals I want.
+
+Furthermore, SQL is a normalized data store (no duplication of data) which is a pain in the ass for me to insert with because I have to draw relationships between each row of data when I want to just slap recipes in with random ingredients.
+
+The new change is to use MongoDB Atlas + Next.js PWA (to avoid the app store) on Vercel.
+
+---
+
+# OLD README
 Pro
 - Generate shopping list via one SQL query
 	```sql
@@ -70,7 +86,7 @@ pg_restore --host $SERVICE_IP --port 5432 --user postgres --dbname postgres --no
 	- One-to-Many -
   - Many-to-Many - create mapping table (eg: recipes to ingredients) 
 
-#### DBGate Learni;ngs
+#### DBGate Learnings
 - - If you mess with the scrolls on Windows, you can make a panel permanently unavailable to view. If so, uninstall DBGate and then navigate to `C:\Users\<user>\AppData\Roaming` and delete the `dbgate` folder which holds the settings.
 - Export diagram exports an HTML
 
