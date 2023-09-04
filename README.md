@@ -1,5 +1,4 @@
-# SQL Home Cooking
-Simplify weekly shopping - I write meals I want and use query to generate sorted shopping list
+# Home Cooking App
 
 ## Current Architecture
 - Next.js app
@@ -22,6 +21,9 @@ Old Rant
 
 
 ## SQL Architecture
+Simplify weekly shopping - I write meals I want and use query to generate sorted shopping list
+
+
 ER Diagram below was generated using DBGate4
 
 ![er_diagram.png](/er_diagram.png)
