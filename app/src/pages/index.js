@@ -8,6 +8,10 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { recipes } from '@/utils/constants';
 
 
+const generateKey = (pre) => {
+  return `${ pre }_${ new Date().getTime() }`;
+}
+
 export default function Home() {
   const recipeNameList = recipes.map(({ name }) => name);
   const [selected, setSelected] = useState([]);
@@ -44,11 +48,13 @@ export default function Home() {
             <Typography variant="h3" p={2}>Recipes</Typography>
             <Stack spacing={1} p={2}>
               {recipeNameList.map((name) => (
-                <Card sx={{
-                  display: "flex",
-                  p: 1,
-                  backgroundColor: selected.includes(name) ? "primary.main" : ""
-                }}>
+                <Card
+                  key={name}
+                  sx={{
+                    display: "flex",
+                    p: 1,
+                    backgroundColor: selected.includes(name) ? "primary.main" : ""
+                  }}>
                   <CardActionArea onClick={() => addSelected(name)}>
                     <Typography variant="h5">{name}</Typography>
                   </CardActionArea>
@@ -61,7 +67,7 @@ export default function Home() {
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
             {selectedIngredients.map(({ name }) => (
-              <Typography variant="h5">{name}</Typography>
+              <Typography key={generateKey(name)} variant="h5">{name}</Typography>
             ))}
           </Grid>
           <Grid item xs={12} sm={6} md={4}>
