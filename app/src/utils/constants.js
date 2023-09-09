@@ -90,25 +90,12 @@ export const recipes = [{
 
 /*
 RAW INPUT to ChatGPT
-input = [{
-  name: "curry",
-  ingredientList: ["carrot", "potato", "chicken", "onion", "Vermont Curry Roux"],
-}, {
-  name: "strapatsada",
-  ingredientList: ["olive oil", "feta cheese", "white bread", "egg", "tomato",],
-}, {
-  name: "肉松三明治",
-  ingredientList: ["肉松", "cucumber", "white bread", "mayonnaise"],
-}, {
-  name: "火锅",
-  ingredientList: ["丸子", "nappa cabbage", "shiitake mushroom", "enoki mushroom", "daikon", "carrot", "沙茶酱", "芝麻将", "garlic", 'cilantro', 'scallions'],
-}];
 
 PROMPT
-Given the following list of ingredients, categorize each ingredient into one of the following: ['dairy', 'aisle', 'produce', 'deli', 'meat']
+For every recipe in the following "List of Recipes", categorize every item in ingredientList into one of the following: ['dairy', 'aisle', 'produce', 'deli', 'meat']
 
 Write the output in the following format:
-output = [{
+export const recipes = [{
   name: "curry",
   ingredientList: [{
     name: "carrot",
@@ -128,9 +115,63 @@ output = [{
   }],
 }];
 
-Ingredient List
-{
+List of Recipes
+[{
+  name: "curry",
+  ingredientList: ["carrot", "potato", "chicken", "onion", "Vermont Curry Roux"],
+}, {
   name: "strapatsada",
-  ingredientList: ["olive oil", "feta cheese", "white bread", "egg", "tomato",],
-},
+  ingredientList: ["olive oil", "feta cheese", "white bread", "egg", "tomato"],
+}, {
+  name: "肉松三明治",
+  ingredientList: ["肉松", "cucumber", "white bread", "mayonnaise"],
+}, {
+  name: "火锅",
+  ingredientList: ["丸子", "nappa cabbage", "shiitake mushroom", "enoki mushroom", "daikon", "carrot", "沙茶酱", "芝麻将", "garlic", 'cilantro', 'scallion'],
+}, {
+  name: "gyoza",
+  ingredientList: ['water', 'flour', 'pork', 'garlic chive', 'scallion', 'garlic', 'ginger', 'soy sauce', 'sesame oil'],
+}, {
+  name: "cilantro lime rice",
+  ingredientList: ["rice", "lime", "cilantro"],
+}, {
+  name: "pico de gallo",
+  ingredientList: ["tomato", 'onion', 'cilantro', 'lime', 'jalapeno'],
+}, {
+  name: "guacamole",
+  ingredientList: ['avocado', 'tomato', 'onion', 'lime'],
+}, {
+  name: "mexican chicken",
+  ingredientList: ['chicken thigh', 'cumin', 'salt', 'black pepper'],
+}, {
+  name: "dashimaki tamago",
+  ingredientList: ['egg', 'dashi', 'mirin', 'sugar', 'soy sauce', 'rice wine'],,
+}, {
+  name: "gyudon",
+  ingredientList: ['fatty beef', 'garlic', 'ginger', 'scallion', 'onion', 'sake', 'soy sauce', 'mirin'],
+}, {
+  name: "kombu tsukudani",
+  ingredientList: ['kombu', 'mirin', 'sugar', 'sake'],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}, {
+  name: "",
+  ingredientList: [],
+}];
 */
