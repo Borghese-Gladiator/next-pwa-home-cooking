@@ -2,37 +2,74 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import { Box, Card, CardActionArea, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Typography } from '@mui/material'
+import { Box, Card, CardActionArea, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography } from '@mui/material'
 import Navbar from '@/components/Navbar';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { recipes } from '@/utils/constants';
 
 
 const generateKey = (pre) => {
-  return `${ pre }_${ new Date().getTime() }`;
+  return `${pre}_${new Date().getTime()}`;
+}
+
+const CustomTabPanel = ({ children, value, index, ...other }) => {
+  return (
+    <Box sx={{
+      display: value !== index ? 'none' : 'block',
+      padding: 2,
+    }}>
+      {children}
+    </Box>
+  )
 }
 
 export default function Home() {
+  /**
+   * TAB STATE
+   */
+  const [tabValue, setTabValue] = React.useState(0);
+  const handleChange = (event, newValue) => {
+    setTabValue(newValue);
+  };
+
+  /**
+   * SELECTED RECIPES
+   */
   const recipeNameList = recipes.map(({ name }) => name);
   const [selected, setSelected] = useState([]);
-  const selectedIngredients = useMemo(() => {
-    const ingredients = selected.reduce((acc, curr) => {
+  const groupedIngredients = useMemo(() => {
+    const selectedIngredients = selected.reduce((acc, curr) => {
       const recipe = recipes.find(({ name }) => name === curr);
       return acc.concat(recipe.ingredientList)
     }, []);
-    ingredients.sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB))
+    console.log(selectedIngredients)
+    const countMap = selectedIngredients.reduce((acc, { name }) => {
+      acc[name] = (acc[name] || 0) + 1;
+      return acc;
+    }, {});
+    console.log(countMap)
+    const ingredients = Object.entries(countMap).map(([name, count]) => {
+      if (count > 1) {
+        return `${name} (x${count})`
+      }
+      return name;
+    })
+    ingredients.sort((ingredientA, ingredientB) => ingredientA.localeCompare(ingredientB));
     return ingredients;
-  }, [selected])
-  const addSelected = (name) => {
-    if (!selected.includes(name))
+  }, [selected]);
+  const handleSelect = (name) => {
+    if (selected.includes(name)) {
+      // delete from selected
+      setSelected(selected.filter((curr) => curr !== name));
+    } else {
+      // add to selected
       setSelected([...selected, name]);
-  }
-  const removeSelected = (name) => {
-    setSelected(selected.filter((curr) => curr !== name));
+    }
   }
   useEffect(() => {
     console.log(selected)
   }, [selected])
+
   return (
     <>
       <Head>
@@ -43,37 +80,40 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <Grid container direction="row" spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h3" p={2}>Recipes</Typography>
-            <Stack spacing={1} p={2}>
-              {recipeNameList.map((name) => (
-                <Card
-                  key={name}
-                  sx={{
-                    display: "flex",
-                    p: 1,
-                    backgroundColor: selected.includes(name) ? "primary.main" : ""
-                  }}>
-                  <CardActionArea onClick={() => addSelected(name)}>
-                    <Typography variant="h5">{name}</Typography>
-                  </CardActionArea>
-                  <IconButton onClick={() => removeSelected(name)}>
-                    <DeleteIcon color="error" />
-                  </IconButton>
-                </Card>
-              ))}
-            </Stack>
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            {selectedIngredients.map(({ name }) => (
-              <Typography key={generateKey(name)} variant="h5">{name}</Typography>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <Tabs value={tabValue} onChange={handleChange}>
+            <Tab label="Recipes" />
+            <Tab label="Ingredients" />
+          </Tabs>
+        </Box>
+        <CustomTabPanel value={tabValue} index={0}>
+          <Stack spacing={1} p={2}>
+            {recipeNameList.map((name) => (
+              <Card
+                key={name}
+                sx={{
+                  display: "flex",
+                  p: 1,
+                  border: 2,
+                  borderColor: selected.includes(name) ? "primary.main" : "",
+                }}>
+                <CardActionArea onClick={() => handleSelect(name)}>
+                  <Typography variant="h5">{name}</Typography>
+                </CardActionArea>
+              </Card>
             ))}
-          </Grid>
-          <Grid item xs={12} sm={6} md={4}>
-            <div>BLAH</div>
-          </Grid>
-        </Grid>
+          </Stack>
+        </CustomTabPanel>
+        <CustomTabPanel value={tabValue} index={1}>
+          {groupedIngredients.length === 0 && (
+            <Typography>
+              Select recipes to see ingredients
+            </Typography>
+          )}
+          {groupedIngredients.map((ingredient) => (
+            <Typography key={generateKey(ingredient)} variant="h5">{ingredient}</Typography>
+          ))}
+        </CustomTabPanel>
       </main>
     </>
   )
