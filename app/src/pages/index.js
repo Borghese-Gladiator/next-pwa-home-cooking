@@ -97,6 +97,7 @@ export default function Home() {
     setSelectedIngredientIdList([...selectedIngredientIdList, id])
   }
   useEffect(() => {
+    console.log(selectedRecipes);
     setSelectedIngredientIdList([]);
   }, [selectedRecipes])
 
@@ -142,7 +143,7 @@ export default function Home() {
               margin: 0.5
             },
           }}>
-            {recipeNameList.map((name, index) => (
+            {selectedRecipes.map((name, index) => (
               <Chip
                 key={generateKey(name)}
                 label={name}
@@ -174,12 +175,12 @@ export default function Home() {
                       checked={isChecked}
                       onChange={(e) => handleIngredientSelect(id)}
                     />
-                    <Typography key={generateKey(name)} variant="h5" sx={{
+                    <Typography variant="h5" sx={{
                       textDecoration: isChecked ? 'line-through' : 'none',
                       color: isChecked ? '#888888' : null,
                     }}>{name}</Typography>
                   </Box>
-                )
+                );
               })}
             </Box>
           ))}
