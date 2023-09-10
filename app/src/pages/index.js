@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
-import { Box, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid';
 import { isEmpty } from 'lodash';
 
@@ -119,6 +119,7 @@ export default function Home() {
           </Tabs>
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
+          <Button variant="contained" color="secondary" onClick={() => setSelectedRecipes([])}>Clear</Button>
           <Stack spacing={1} p={2}>
             {recipeNameList.map((name) => (
               <Card
