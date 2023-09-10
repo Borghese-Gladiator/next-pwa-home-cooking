@@ -95,7 +95,13 @@ export default function Home() {
    */
   const [selectedIngredientIdList, setSelectedIngredientIdList] = useState([]);
   const handleIngredientSelect = (id) => {
-    setSelectedIngredientIdList([...selectedIngredientIdList, id])
+    if (selectedIngredientIdList.includes(id)) {
+      // delete from selected
+      setSelectedIngredientIdList(selectedIngredientIdList.filter((curr) => curr !== id));
+    } else {
+      // add to selected
+      setSelectedIngredientIdList([...selectedIngredientIdList, id])
+    }
   }
   useEffect(() => {
     console.log(selectedRecipes);
