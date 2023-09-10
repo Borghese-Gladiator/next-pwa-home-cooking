@@ -1,8 +1,14 @@
 # Home Cooking App
+I'm cooking a lot recently and find it a pain to figure out my shopping list. Also, I don't like the current recipe sites with how much info they ask (I don't remember nor track any measurements).
+
+I wrote down my recipes with ingredients and had ChatGPT classify them so I can group them in my app by section of the grocery store.
+
 
 ## Current Architecture
-- Next.js app
-- 
+- `/app` - Next.js PWA app with MUIv5 components
+  - ChatGPT prompt - `/app/src/utils/prompt.md`
+- `/queries` - old SQL queries that are not relevant here (since my data is all in `/app/src/utils/constants.js`)
+- `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 <details>
 <summary>Old Changes</summary>
