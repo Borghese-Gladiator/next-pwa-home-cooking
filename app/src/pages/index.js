@@ -40,6 +40,7 @@ export default function Home() {
    * SELECTED RECIPES
    */
   const recipeNameList = recipes.map(({ name }) => name);
+  recipeNameList.sort((nameA, nameB) => nameA.localeCompare(nameB));
   const [selectedRecipes, setSelectedRecipes] = useState([]);
   const {
     ingredientsGroup,
@@ -112,7 +113,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={tabValue} onChange={handleTabChange}>
+          <Tabs value={tabValue} onChange={handleTabChange} centered>
             <Tab label="Recipes" />
             <Tab label="Ingredients" />
           </Tabs>
