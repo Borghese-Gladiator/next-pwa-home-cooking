@@ -2,7 +2,11 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
+
 import { Box, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography } from '@mui/material'
+import { v4 as uuidv4 } from 'uuid';
+import { isEmpty } from 'lodash';
+
 import Navbar from '@/components/Navbar';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { recipes } from '@/utils/constants';
@@ -37,23 +41,43 @@ export default function Home() {
    */
   const recipeNameList = recipes.map(({ name }) => name);
   const [selectedRecipes, setSelectedRecipes] = useState([]);
-  const groupedIngredients = useMemo(() => {
-    const allSelectedIngredients = selectedRecipes.reduce((acc, curr) => {
+  const {
+    ingredientsGroup,
+    ingredientsIdMap
+  } = useMemo(() => {
+    const ingredientsIdMap = {};
+    const allIngredients = selectedRecipes.reduce((acc, curr) => {
       const recipe = recipes.find(({ name }) => name === curr);
       return acc.concat(recipe.ingredientList)
     }, []);
-    const countMap = allSelectedIngredients.reduce((acc, { name }) => {
-      acc[name] = (acc[name] || 0) + 1;
+    const categoryGroups = allIngredients.reduce((acc, { category, name }) => {
+      if (!(category in acc)) {
+        acc[category] = [];
+      }
+      // unique list of ingredients in each category
+      if (!(name in acc[category])) {
+        acc[category].push(name)
+      }
       return acc;
     }, {});
-    const ingredients = Object.entries(countMap).map(([name, count]) => {
-      if (count > 1) {
-        return `${name} (x${count})`
-      }
-      return name;
-    })
-    ingredients.sort((ingredientA, ingredientB) => ingredientA.localeCompare(ingredientB));
-    return ingredients;
+    const categoryGroupsCounted = Object.entries(categoryGroups).reduce((acc, [category, ingredients]) => {
+      const countsMap = ingredients.reduce((acc, name) => {
+        acc[name] = (acc[name] || 0) + 1;
+        return acc;
+      }, {});
+      acc[category] = Object.entries(countsMap).map(([name, count]) => {
+        const text = count > 1 ? `${name} (x${count})` : name;
+        const id = uuidv4();
+        ingredientsIdMap[name] = id;
+        return { name: text, id, };
+      })
+      acc[category].sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB));
+      return acc;
+    }, categoryGroups);
+    return {
+      ingredientsIdMap,
+      ingredientsGroup: categoryGroupsCounted,
+    }
   }, [selectedRecipes]);
   const handleRecipeSelect = (name) => {
     if (selectedRecipes.includes(name)) {
@@ -68,22 +92,12 @@ export default function Home() {
   /**
    * SELECTED INGREDIENTS
    */
-  const [selectedIngredients, setSelectedIngredients] = useState([]);
-  const handleIngredientSelect = (idx) => {
-    setSelectedIngredients((prev) => {
-      const curr = [...prev];
-      curr[idx] = { ...curr[idx], isChecked: !curr[idx]?.isChecked };
-      console.log(curr)
-      return curr;
-    })
-    console.log("REACHED", idx);
+  const [selectedIngredientIdList, setSelectedIngredientIdList] = useState([]);
+  const handleIngredientSelect = (id) => {
+    setSelectedIngredientIdList([...selectedIngredientIdList, id])
   }
   useEffect(() => {
-    console.log("CALLED RESET")
-    setSelectedIngredients(groupedIngredients.map((name) => ({
-      name,
-      isChecked: false
-    })))
+    setSelectedIngredientIdList([]);
   }, [selectedRecipes])
 
   return (
@@ -130,29 +144,44 @@ export default function Home() {
           }}>
             {recipeNameList.map((name, index) => (
               <Chip
-                key={index}
+                key={generateKey(name)}
                 label={name}
               />
             ))}
           </Box>
-
-          {groupedIngredients.length === 0 && (
+          {isEmpty(ingredientsGroup) && (
             <Typography>
               Select recipes to see ingredients
             </Typography>
           )}
-          {selectedIngredients.map(({ name, isChecked }, idx) => (
-            <Box key={name} sx={{ display: 'flex' }}>
-              <Checkbox
-                checked={isChecked}
-                onChange={(e) => handleIngredientSelect(idx)}
-              />
-              <Typography key={generateKey(name)} variant="h5" sx={{
-                textDecoration: isChecked ? 'line-through' : 'none',
-                color: isChecked ? '#888888' : null,
-              }}>{name}</Typography>
+          {Object.entries(ingredientsGroup).map(([category, ingredientList]) => (
+            <Box key={generateKey(category)}>
+              <Typography
+                variant="h5"
+                sx={{
+                  textDecoration:
+                    ingredientList.every((name) => selectedIngredientIdList.includes(ingredientsIdMap[name]))
+                      ? 'line-through' : 'none',
+                }}
+              >
+                {category}
+              </Typography>
+              {ingredientList.map(({ id, name }, idx) => {
+                const isChecked = selectedIngredientIdList.includes(id);
+                return (
+                  <Box key={generateKey(name)} sx={{ display: 'flex', ml: 2 }}>
+                    <Checkbox
+                      checked={isChecked}
+                      onChange={(e) => handleIngredientSelect(id)}
+                    />
+                    <Typography key={generateKey(name)} variant="h5" sx={{
+                      textDecoration: isChecked ? 'line-through' : 'none',
+                      color: isChecked ? '#888888' : null,
+                    }}>{name}</Typography>
+                  </Box>
+                )
+              })}
             </Box>
-
           ))}
         </CustomTabPanel>
       </main>
