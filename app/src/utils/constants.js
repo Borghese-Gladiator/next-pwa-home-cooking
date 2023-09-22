@@ -1,5 +1,47 @@
 export const recipes = [{
-  name: "curry",
+  name: "pasta",
+  cuisine: "italian",
+  ingredientList: [{
+    name: "pasta",
+    category: "aisle",
+  }, {
+    name: "olive oil",
+    category: "aisle",
+  }, {
+    name: "tomato",
+    category: "produce",
+  }, {
+    name: "basil",
+    category: "produce",
+  }, {
+    name: "black pepper",
+    category: "misc",
+  }],
+}, {
+  name: "shrimp scampi",
+  cuisine: "italian",
+  ingredientList: [{
+    name: "shrimp",
+    category: "seafood",
+  }, {
+    name: "pasta",
+    category: "aisle",
+  }, {
+    name: "olive oil",
+    category: "aisle",
+  }, {
+    name: "tomato",
+    category: "produce",
+  }, {
+    name: "basil",
+    category: "produce",
+  }, {
+    name: "black pepper",
+    category: "misc",
+  }],
+}, {
+  name: "Japanese curry",
+  cuisine: "japanese",
   ingredientList: [{
     name: "carrot",
     category: "produce",
@@ -18,6 +60,7 @@ export const recipes = [{
   }],
 }, {
   name: "strapatsada",
+  cuisine: "misc",
   ingredientList: [{
     name: "olive oil",
     category: "aisle",
@@ -36,9 +79,10 @@ export const recipes = [{
   }],
 }, {
   name: "肉松三明治",
+  cuisine: "chinese",
   ingredientList: [{
     name: "肉松",
-    category: "deli",
+    category: "misc",
   }, {
     name: "cucumber",
     category: "produce",
@@ -47,10 +91,11 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "mayonnaise",
-    category: "aisle",
+    category: "misc",
   }],
 }, {
   name: "火锅",
+  cuisine: "chinese",
   ingredientList: [{
     name: "丸子",
     category: "meat",
@@ -71,10 +116,10 @@ export const recipes = [{
     category: "produce",
   }, {
     name: "沙茶酱",
-    category: "aisle",
+    category: "misc",
   }, {
-    name: "芝麻将",
-    category: "aisle",
+    name: "芝麻酱",
+    category: "misc",
   }, {
     name: "garlic",
     category: "produce",
@@ -87,6 +132,7 @@ export const recipes = [{
   }],
 }, {
   name: "gyoza",
+  cuisine: "japanese",
   ingredientList: [{
     name: "water",
     category: "misc",
@@ -110,13 +156,14 @@ export const recipes = [{
     category: "produce",
   }, {
     name: "soy sauce",
-    category: "aisle",
+    category: "misc",
   }, {
     name: "sesame oil",
-    category: "aisle",
+    category: "misc",
   }],
 }, {
   name: "cilantro lime rice",
+  cuisine: "misc",
   ingredientList: [{
     name: "rice",
     category: "aisle",
@@ -129,6 +176,7 @@ export const recipes = [{
   }],
 }, {
   name: "pico de gallo",
+  cuisine: "mexican",
   ingredientList: [{
     name: "tomato",
     category: "produce",
@@ -147,6 +195,7 @@ export const recipes = [{
   }],
 }, {
   name: "guacamole",
+  cuisine: "mexican",
   ingredientList: [{
     name: "avocado",
     category: "produce",
@@ -162,12 +211,13 @@ export const recipes = [{
   }],
 }, {
   name: "mexican chicken",
+  cuisine: "mexican",
   ingredientList: [{
     name: "chicken thigh",
     category: "meat",
   }, {
     name: "cumin",
-    category: "aisle",
+    category: "misc",
   }, {
     name: "salt",
     category: "misc",
@@ -177,9 +227,10 @@ export const recipes = [{
   }],
 }, {
   name: "mexican beans",
+  cuisine: "mexican",
   ingredientList: [{
     name: "canned pinto bean",
-    category: "aisle",
+    category: "canned goods",
   }, {
     name: "salt",
     category: "misc",
@@ -192,120 +243,127 @@ export const recipes = [{
   }],
 }, {
   name: 'mexican rice',
+  cuisine: 'mexican',
   ingredientList: [{
     name: 'rice',
     category: 'aisle',
   }, {
     name: 'canned tomato',
-    category: 'aisle',
+    category: 'canned goods',
   }, {
-    name: 'frozen peas',
-    category: 'misc',
+    name: 'frozen pees',
+    category: 'frozen',
   }, {
     name: 'chicken stock',
-    category: 'aisle',
+    category: 'canned goods',
   }, {
-    name: 'mexican cheese (cheddar / monterey jack)',
+    name: 'mexican cheese (chedar / monterey jack)',
     category: 'dairy',
   }],
 }, {
   name: "dashimaki tamago",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'dashi',
-    category: 'aisle',
+    name: "dashi",
+    category: "aisle",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }, {
-    name: 'sugar',
-    category: 'misc',
+    name: "sugar",
+    category: "misc",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'rice wine',
-    category: 'aisle',
+    name: "rice wine",
+    category: "aisle",
   }],
 }, {
   name: "gyudon",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'fatty beef',
-    category: 'meat',
+    name: "fatty beef",
+    category: "meat",
   }, {
-    name: 'garlic',
-    category: 'produce',
+    name: "garlic",
+    category: "produce",
   }, {
-    name: 'ginger',
-    category: 'produce',
+    name: "ginger",
+    category: "produce",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'dashi',
-    category: 'aisle',
+    name: "dashi",
+    category: "aisle",
   }, {
-    name: 'sake',
-    category: 'aisle',
+    name: "sake",
+    category: "aisle",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }],
 }, {
   name: "kombu tsukudani",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'kombu',
-    category: 'aisle',
+    name: "kombu",
+    category: "aisle",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }, {
-    name: 'sugar',
-    category: 'misc',
+    name: "sugar",
+    category: "misc",
   }, {
-    name: 'sake',
-    category: 'aisle',
+    name: "sake",
+    category: "aisle",
   }],
 }, {
   name: "salad burrito",
+  cuisine: "misc",
   ingredientList: [{
-    name: 'large tortilla',
-    category: 'aisle',
+    name: "large tortilla",
+    category: "aisle",
   }, {
-    name: 'salad',
-    category: 'produce',
+    name: "salad",
+    category: "produce",
   }, {
-    name: 'hummus',
-    category: 'aisle',
+    name: "hummus",
+    category: "misc",
   }, {
-    name: 'balsamic',
-    category: 'aisle',
+    name: "balsamic",
+    category: "aisle",
   }, {
-    name: 'feta cheese',
-    category: 'dairy',
+    name: "feta cheese",
+    category: "dairy",
   }],
 }, {
   name: 'lettuce',
+  cuisine: 'misc',
   ingredientList: [{
     name: 'lettuce',
     category: 'produce',
   }],
 }, {
   name: 'salad',
+  cuisine: 'misc',
   ingredientList: [{
     name: 'mixed greens',
     category: 'produce',
   }, {
     name: 'hummus',
-    category: 'aisle',
+    category: 'misc',
   }, {
     name: 'balsamic vinegar',
     category: 'aisle',
@@ -315,399 +373,412 @@ export const recipes = [{
   }],
 }, {
   name: "kimchi spaghetti",
+  cuisine: "misc",
   ingredientList: [{
-    name: 'spaghetti',
-    category: 'aisle',
+    name: "spaghetti",
+    category: "aisle",
   }, {
-    name: 'kimchi',
-    category: 'produce',
+    name: "kimchi",
+    category: "misc",
   }, {
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'bacon',
-    category: 'meat',
+    name: "bacon",
+    category: "meat",
   }, {
-    name: 'mushroom',
-    category: 'produce',
+    name: "mushroom",
+    category: "produce",
   }, {
-    name: 'butter',
-    category: 'dairy',
+    name: "butter",
+    category: "dairy",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'gochujang',
-    category: 'aisle',
+    name: "gochujang",
+    category: "aisle",
   }, {
-    name: 'salt',
-    category: 'misc',
+    name: "salt",
+    category: "misc",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }],
 }, {
   name: "banana bread",
+  cuisine: "misc",
   ingredientList: [{
-    name: 'banana',
-    category: 'produce',
+    name: "banana",
+    category: "produce",
   }, {
-    name: 'butter',
-    category: 'dairy',
+    name: "butter",
+    category: "dairy",
   }, {
-    name: 'baking soda',
-    category: 'aisle',
+    name: "baking soda",
+    category: "aisle",
   }, {
-    name: 'salt',
-    category: 'misc',
+    name: "salt",
+    category: "misc",
   }, {
-    name: 'sugar',
-    category: 'misc',
+    name: "sugar",
+    category: "misc",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'vanilla extract',
-    category: 'aisle',
+    name: "vanilla extract",
+    category: "aisle",
   }, {
-    name: 'flour',
-    category: 'aisle',
+    name: "flour",
+    category: "aisle",
   }],
 }, {
   name: "fancy bagel",
+  cuisine: "misc",
   ingredientList: [{
-    name: 'sesame seed bagel',
-    category: 'aisle',
+    name: "sesame seed bagel",
+    category: "aisle",
   }, {
-    name: 'prosciutto',
-    category: 'meat',
+    name: "prosciutto",
+    category: "deli",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'tomato',
-    category: 'produce',
+    name: "tomato",
+    category: "produce",
   }, {
-    name: 'mozzarella cheese',
-    category: 'dairy',
+    name: "mozzarella cheese",
+    category: "dairy",
   }, {
-    name: 'provolone',
-    category: 'dairy',
+    name: "provolone",
+    category: "dairy",
   }],
 }, {
   name: "tonkatsu",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'pork shoulder',
-    category: 'meat',
+    name: "pork shoulder",
+    category: "meat",
   }, {
-    name: 'salt',
-    category: 'misc',
+    name: "salt",
+    category: "misc",
   }, {
-    name: 'pepper',
-    category: 'misc',
+    name: "pepper",
+    category: "misc",
   }, {
-    name: 'flour',
-    category: 'aisle',
+    name: "flour",
+    category: "aisle",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'panko',
-    category: 'aisle',
+    name: "panko",
+    category: "aisle",
   }, {
-    name: 'cabbage',
-    category: 'produce',
+    name: "cabbage",
+    category: "produce",
   }],
 }, {
   name: "omelette rice",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'rice',
-    category: 'aisle',
+    name: "rice",
+    category: "aisle",
   }, {
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'carrot',
-    category: 'produce',
+    name: "carrot",
+    category: "produce",
   }, {
-    name: 'frozen mixed veggies',
-    category: 'misc',
+    name: "frozen mixed veggies",
+    category: "frozen",
   }, {
-    name: 'chicken stock',
-    category: 'aisle',
+    name: "chicken stock",
+    category: "canned goods",
   }, {
-    name: 'butter',
-    category: 'dairy',
+    name: "butter",
+    category: "dairy",
   }, {
-    name: 'ketchup',
-    category: 'aisle',
+    name: "ketchup",
+    category: "aisle",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'dashi',
-    category: 'aisle',
+    name: "dashi",
+    category: "aisle",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }, {
-    name: 'sake',
-    category: 'aisle',
+    name: "sake",
+    category: "aisle",
   }],
 }, {
   name: "oyakodon",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'dashi',
-    category: 'aisle',
+    name: "dashi",
+    category: "aisle",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'sake',
-    category: 'aisle',
+    name: "sake",
+    category: "aisle",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }, {
-    name: 'sugar',
-    category: 'misc',
+    name: "sugar",
+    category: "misc",
   }, {
-    name: 'chicken',
-    category: 'meat',
+    name: "chicken",
+    category: "meat",
   }, {
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }],
 }, {
   name: "okonomiyaki",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'pork belly',
-    category: 'meat',
+    name: "pork belly",
+    category: "meat",
   }, {
-    name: 'flour',
-    category: 'aisle',
+    name: "flour",
+    category: "aisle",
   }, {
-    name: 'cabbage',
-    category: 'produce',
+    name: "cabbage",
+    category: "produce",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'frozen shrimp',
-    category: 'seafood',
+    name: "frozen shrimp",
+    category: "seafood",
   }, {
-    name: 'frozen mixed veggies',
-    category: 'misc',
+    name: "frozen mixed veggies",
+    category: "frozen",
   }, {
-    name: 'fresh yakisoba noodles',
-    category: 'aisle',
+    name: "fresh yakisoba noodles",
+    category: "aisle",
   }, {
-    name: 'Okonomiyaki sauce (or ketchup + worcestershire + sugar)',
-    category: 'aisle',
+    name: "Okonomiyaki sauce (or ketchup + worcestershire + sugar)",
+    category: "aisle",
   }, {
-    name: 'Kewpie mayonnaise',
-    category: 'aisle',
+    name: "Kewpie mayonnaise",
+    category: "misc",
   }, {
-    name: 'bonito flakes',
-    category: 'aisle',
+    name: "bonito flakes",
+    category: "seafood",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'aonori',
-    category: 'aisle',
+    name: "aonori",
+    category: "misc",
   }],
 }, {
   name: "sundubu",
+  cuisine: "korean",
   ingredientList: [{
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'garlic',
-    category: 'produce',
+    name: "garlic",
+    category: "produce",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'pork belly',
-    category: 'meat',
+    name: "pork belly",
+    category: "meat",
   }, {
-    name: 'kimchi',
-    category: 'produce',
+    name: "kimchi",
+    category: "misc",
   }, {
-    name: 'Korean soft tofu',
-    category: 'dairy',
+    name: "Korean soft tofu",
+    category: "dairy",
   }, {
-    name: 'gochugaru',
-    category: 'aisle',
+    name: "gochugaru",
+    category: "aisle",
   }, {
-    name: 'sesame oil',
-    category: 'aisle',
+    name: "sesame oil",
+    category: "misc",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }, {
-    name: 'dried kombu',
-    category: 'aisle',
+    name: "dried kombu",
+    category: "aisle",
   }, {
-    name: 'dried anchovies',
-    category: 'seafood',
+    name: "dried anchovies",
+    category: "seafood",
   }],
 }, {
   name: "miso soup",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'dashi',
-    category: 'aisle',
+    name: "dashi",
+    category: "aisle",
   }, {
-    name: 'silken tofu',
-    category: 'dairy',
+    name: "silken tofu",
+    category: "dairy",
   }, {
-    name: 'bonito flakes',
-    category: 'aisle',
+    name: "bonito flakes",
+    category: "seafood",
   }, {
-    name: 'wakame',
-    category: 'aisle',
+    name: "wakame",
+    category: "aisle",
   }, {
-    name: 'red miso',
-    category: 'aisle',
+    name: "red miso",
+    category: "aisle",
   }],
 }, {
   name: "麻婆豆腐",
+  cuisine: "chinese",
   ingredientList: [{
-    name: 'pork loin',
-    category: 'meat',
+    name: "pork loin",
+    category: "meat",
   }, {
-    name: 'garlic',
-    category: 'produce',
+    name: "garlic",
+    category: "produce",
   }, {
-    name: 'ginger',
-    category: 'produce',
+    name: "ginger",
+    category: "produce",
   }, {
-    name: 'silken tofu',
-    category: 'dairy',
+    name: "silken tofu",
+    category: "dairy",
   }, {
-    name: '豆瓣酱',
-    category: 'aisle',
+    name: "豆瓣酱",
+    category: "aisle",
   }, {
-    name: '蒜蓉辣椒酱',
-    category: 'aisle',
+    name: "蒜蓉辣椒酱",
+    category: "aisle",
   }],
 }, {
   name: "京酱肉丝",
+  cuisine: "chinese",
   ingredientList: [{
-    name: 'garlic',
-    category: 'produce',
+    name: "garlic",
+    category: "produce",
   }, {
-    name: 'ginger',
-    category: 'produce',
+    name: "ginger",
+    category: "produce",
   }, {
-    name: 'scallion',
-    category: 'produce',
+    name: "scallion",
+    category: "produce",
   }, {
-    name: 'pork loin',
-    category: 'meat',
+    name: "pork loin",
+    category: "meat",
   }, {
-    name: '甜面酱',
-    category: 'aisle',
+    name: "甜面酱",
+    category: "aisle",
   }],
 }, {
   name: "simmered potatoes",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'potatoes',
-    category: 'produce',
+    name: "potatoes",
+    category: "produce",
   }, {
-    name: 'soy sauce',
-    category: 'aisle',
+    name: "soy sauce",
+    category: "misc",
   }, {
-    name: 'sugar',
-    category: 'misc',
+    name: "sugar",
+    category: "misc",
   }, {
-    name: 'mirin',
-    category: 'aisle',
+    name: "mirin",
+    category: "aisle",
   }],
 }, {
   name: "hamburg steak",
+  cuisine: "japanese",
   ingredientList: [{
-    name: 'carrot',
-    category: 'produce',
+    name: "carrot",
+    category: "produce",
   }, {
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'shiitake mushroom',
-    category: 'produce',
+    name: "shiitake mushroom",
+    category: "produce",
   }, {
-    name: 'panko',
-    category: 'aisle',
+    name: "panko",
+    category: "aisle",
   }, {
-    name: 'milk',
-    category: 'dairy',
+    name: "milk",
+    category: "dairy",
   }, {
-    name: 'ground beef',
-    category: 'meat',
+    name: "ground beef",
+    category: "meat",
   }, {
-    name: 'ground pork',
-    category: 'meat',
+    name: "ground pork",
+    category: "meat",
   }, {
-    name: 'nutmeg',
-    category: 'aisle',
+    name: "nutmeg",
+    category: "misc",
   }, {
-    name: 'flour',
-    category: 'aisle',
+    name: "flour",
+    category: "aisle",
   }, {
-    name: 'red wine (or red wine vinegar)',
-    category: 'aisle',
+    name: "red wine (or red wine vinegar",
+    category: "aisle",
   }, {
-    name: 'ketchup',
-    category: 'aisle',
+    name: "ketchup",
+    category: "aisle",
   }, {
-    name: 'worcestershire sauce',
-    category: 'aisle',
+    name: "worcestershire sauce",
+    category: "aisle",
   }, {
-    name: 'honey',
-    category: 'aisle',
+    name: "honey",
+    category: "misc",
   }, {
-    name: 'butter',
-    category: 'dairy',
+    name: "butter",
+    category: "dairy",
   }, {
-    name: 'cherry tomato',
-    category: 'produce',
+    name: "cherry tomato",
+    category: "produce",
   }, {
-    name: 'mushroom',
-    category: 'produce',
+    name: "mushroom",
+    category: "produce",
   }],
 }, {
   name: "green shakshukas",
+  cuisine: "misc",
   ingredientList: [{
-    name: 'onion',
-    category: 'produce',
+    name: "onion",
+    category: "produce",
   }, {
-    name: 'spinach',
-    category: 'produce',
+    name: "spinach",
+    category: "produce",
   }, {
-    name: 'tomatillo',
-    category: 'produce',
+    name: "tomatillo",
+    category: "produce",
   }, {
-    name: 'garlic',
-    category: 'produce',
+    name: "garlic",
+    category: "produce",
   }, {
-    name: 'coriander',
-    category: 'produce',
+    name: "coriander",
+    category: "produce",
   }, {
-    name: 'cumin',
-    category: 'aisle',
+    name: "cumin",
+    category: "misc",
   }, {
-    name: 'egg',
-    category: 'dairy',
+    name: "egg",
+    category: "dairy",
   }],
-}];
-
+}]
