@@ -1,10 +1,15 @@
 # RAW INPUT to ChatGPT
 PROMPT
-For every recipe in the following "List of Recipes", categorize every item in ingredientList into one of the following: ['dairy', 'aisle', 'produce', 'deli', 'meat', 'misc',]
+For every recipe in the following "List of Recipes"
+- categorize every recipe into one of the following: ['japanese', 'italian', 'chinese', 'mexican', 'misc']
+- categorize every item in ingredientList into one of the following: ['dairy', 'aisle', 'produce', 'deli', 'meat', 'misc']
 
-Write the output in the following format:
-export const recipes = [{
+Do not write a script. Write the output as seen below.
+
+Write the output in the following format
+[{
   name: "curry",
+  cuisine: "japanese",
   ingredientList: [{
     name: "carrot",
     category: "produce",
@@ -21,12 +26,52 @@ export const recipes = [{
     name: "Vermont Curry Roux",
     category: "misc",
   }],
-}];
+}, {
+  name: "tonkatsu",
+  cuisine: "japanese",
+  ingredientList: [
+    {
+      name: "pork shoulder",
+      category: "meat"
+    },
+    {
+      name: "salt",
+      category: "misc"
+    },
+    {
+      name: "pepper",
+      category: "misc"
+    },
+    {
+      name: "flour",
+      category: "aisle"
+    },
+    {
+      name: "egg",
+      category: "dairy"
+    },
+    {
+      name: "panko",
+      category: "aisle"
+    },
+    {
+      name: "cabbage",
+      category: "produce"
+    }
+  ]
+}]
 
+## 9/21/2023
 List of Recipes
 ```
 [{
-  name: "curry",
+  name: "pasta",
+  ingredientList: ["pasta", "olive oil", "tomato", "basil", "black pepper"],
+}, {
+  name: "shrimp scampi",
+  ingredientList: ["shrimp", "pasta", "olive oil", "tomato", "basil", "black pepper"],
+}, {
+  name: "Japanese curry",
   ingredientList: ["carrot", "potato", "chicken", "onion", "Vermont Curry Roux"],
 }, {
   name: "strapatsada",
