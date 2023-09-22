@@ -37,13 +37,42 @@ export default function Home() {
   };
 
   /**
-   * SELECTED RECIPES
+   * RECIPE GROUPS - show recipes in RecipesTab
    */
-  const recipeNameList = recipes.map(({ name }) => name);
-  recipeNameList.sort((nameA, nameB) => nameA.localeCompare(nameB));
+  const recipeGroups = useMemo(() => {
+    const groups = recipes.reduce((acc, { cuisine, ...recipe }) => {
+      if (!(cuisine in acc)) {
+        acc[cuisine] = [];
+      }
+      acc[cuisine].push(recipe);
+      return acc;
+    }, {});
+    const orderedGroups = Object.keys(groups)
+      .sort((categoryA, categoryB) => {
+        if (categoryA === 'misc' && categoryB !== 'misc') {
+          return 1; // 'misc' should come after all other strings
+        } else if (categoryA !== 'misc' && categoryB === 'misc') {
+          return -1; // 'misc' should come after all other strings
+        } else {
+          return categoryA.localeCompare(categoryB);
+        }
+      })
+      .reduce(
+        (obj, key) => {
+          obj[key] = groups[key];
+          return obj;
+        },
+        {}
+      );
+    return orderedGroups;
+  }, [recipes]);
+
+  /**
+   * SELECTED RECIPES - select recipes in RecipesTab to show in IngredientsTab
+   */
   const [selectedRecipes, setSelectedRecipes] = useState([]);
   const {
-    ingredientsGroup,
+    ingredientGroups,
     ingredientsIdMap
   } = useMemo(() => {
     const ingredientsIdMap = {};
@@ -61,7 +90,7 @@ export default function Home() {
       }
       return acc;
     }, {});
-    const categoryGroupsCounted = Object.entries(categoryGroups).reduce((acc, [category, ingredients]) => {
+    const ingredientGroups = Object.entries(categoryGroups).reduce((acc, [category, ingredients]) => {
       const countsMap = ingredients.reduce((acc, name) => {
         acc[name] = (acc[name] || 0) + 1;
         return acc;
@@ -75,9 +104,18 @@ export default function Home() {
       acc[category].sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB));
       return acc;
     }, categoryGroups);
+    const orderedIngredientGroups = Object.keys(ingredientGroups)
+      .sort((categoryA, categoryB) => categoryA.localeCompare(categoryB))
+      .reduce(
+        (obj, key) => {
+          obj[key] = ingredientGroups[key];
+          return obj;
+        },
+        {}
+      );
     return {
       ingredientsIdMap,
-      ingredientsGroup: categoryGroupsCounted,
+      ingredientGroups: orderedIngredientGroups,
     }
   }, [selectedRecipes]);
   const handleRecipeSelect = (name) => {
@@ -91,7 +129,7 @@ export default function Home() {
   }
 
   /**
-   * SELECTED INGREDIENTS
+   * SELECTED INGREDIENTS - mark as strikethrough on IngredientsTab
    */
   const [selectedIngredientIdList, setSelectedIngredientIdList] = useState([]);
   const handleIngredientSelect = (id) => {
@@ -127,19 +165,31 @@ export default function Home() {
         <CustomTabPanel value={tabValue} index={0}>
           <Button variant="contained" color="secondary" onClick={() => setSelectedRecipes([])}>Clear</Button>
           <Stack spacing={1} p={2}>
-            {recipeNameList.map((name) => (
-              <Card
-                key={name}
-                sx={{
-                  display: "flex",
-                  p: 1,
-                  border: 2,
-                  borderColor: selectedRecipes.includes(name) ? "primary.main" : "",
-                }}>
-                <CardActionArea onClick={() => handleRecipeSelect(name)}>
-                  <Typography variant="h5">{name}</Typography>
-                </CardActionArea>
-              </Card>
+            {Object.entries(recipeGroups).map(([cuisine, recipeList]) => (
+              <Box>
+                <Typography
+                  variant="h5"
+                >
+                  {cuisine}
+                </Typography>
+                {recipeList.map(({ name }) => (
+                  <Card
+                    key={name}
+                    sx={{
+                      display: "flex",
+                      mt: 1,
+                      ml: 3,
+                      p: 1,
+                      border: 2,
+                      borderColor: selectedRecipes.includes(name) ? "primary.main" : "",
+                    }}>
+                    <CardActionArea onClick={() => handleRecipeSelect(name)}>
+                      <Typography variant="h5">{name}</Typography>
+                    </CardActionArea>
+                  </Card>
+                ))}
+              </Box>
+
             ))}
           </Stack>
         </CustomTabPanel>
@@ -158,12 +208,12 @@ export default function Home() {
               />
             ))}
           </Box>
-          {isEmpty(ingredientsGroup) && (
+          {isEmpty(ingredientGroups) && (
             <Typography>
               Select recipes to see ingredients
             </Typography>
           )}
-          {Object.entries(ingredientsGroup).map(([category, ingredientList]) => (
+          {Object.entries(ingredientGroups).map(([category, ingredientList]) => (
             <Box key={generateKey(category)}>
               <Typography
                 variant="h5"
