@@ -165,11 +165,9 @@ export default function Home() {
         <CustomTabPanel value={tabValue} index={0}>
           <Button variant="contained" color="secondary" onClick={() => setSelectedRecipes([])}>Clear</Button>
           <Stack spacing={1} p={2}>
-            {Object.entries(recipeGroups).map(([cuisine, recipeList]) => (
-              <Box>
-                <Typography
-                  variant="h5"
-                >
+            {Object.entries(recipeGroups).map(([cuisine, recipeList], idx) => (
+              <Box key={generateKey(cuisine)}>
+                <Typography variant="h5">
                   {cuisine}
                 </Typography>
                 {recipeList.map(({ name }) => (
