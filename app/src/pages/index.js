@@ -4,8 +4,9 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
 import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material'
-import { v4 as uuidv4 } from 'uuid';
 import { isEmpty } from 'lodash';
+import { ToastContainer, toast } from 'react-toastify';
+import { v4 as uuidv4 } from 'uuid';
 
 import Navbar from '@/components/Navbar';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -165,6 +166,9 @@ export default function Home() {
     const recipeListText = "\n\nRECIPES\n" + selectedRecipes.reduce((acc, name) => `${acc}- ${name}\n`, "");
     const textToCopy = shoppingListText + recipeListText;
     navigator.clipboard.writeText(textToCopy);
+    toast.success("Copied recipes to clipboard!", {
+      position: toast.POSITION.TOP_CENTER
+    });
   }
 
   return (
@@ -269,6 +273,7 @@ export default function Home() {
           ))}
         </CustomTabPanel>
       </main>
+      <ToastContainer />
     </>
   )
 }
