@@ -144,9 +144,28 @@ export default function Home() {
     }
   }
   useEffect(() => {
-    console.log(selectedRecipes);
+    // reset selected ingredients if user changes selected recipes
     setSelectedIngredientIdList([]);
   }, [selectedRecipes])
+
+
+  /**
+   * SAVE INGREDIENTS
+   */
+  const saveIngredientsToClipboard = () => {
+    const shoppingListText = "SHOPPING LIST\n" + Object.entries(ingredientGroups).reduce((acc, [category, ingredients]) => {
+      const categoryText = `- ${category}\n`;
+      const ingredientsText = ingredients.reduce((acc, ingredient) => {
+        acc += `\t- ${ingredient.name}\n`;
+        return acc;
+      }, "");
+      acc += categoryText + ingredientsText
+      return acc;
+    }, "");
+    const recipeListText = "\n\nRECIPES\n" + selectedRecipes.reduce((acc, name) => `${acc}- ${name}\n`, "");
+    const textToCopy = shoppingListText + recipeListText;
+    navigator.clipboard.writeText(textToCopy);
+  }
 
   return (
     <>
@@ -199,6 +218,7 @@ export default function Home() {
           </Stack>
         </CustomTabPanel>
         <CustomTabPanel value={tabValue} index={1}>
+          <Button variant="contained" color="secondary" onClick={saveIngredientsToClipboard}>Copy</Button>
           <Box sx={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -218,19 +238,19 @@ export default function Home() {
               Select recipes to see ingredients
             </Typography>
           )}
-          {Object.entries(ingredientGroups).map(([category, ingredientList]) => (
+          {Object.entries(ingredientGroups).map(([category, ingredients]) => (
             <Box key={generateKey(category)}>
               <Typography
                 variant="h5"
                 sx={{
                   textDecoration:
-                    ingredientList.every((name) => selectedIngredientIdList.includes(ingredientsIdMap[name]))
+                    ingredients.every((name) => selectedIngredientIdList.includes(ingredientsIdMap[name]))
                       ? 'line-through' : 'none',
                 }}
               >
                 {category}
               </Typography>
-              {ingredientList.map(({ id, name }, idx) => {
+              {ingredients.map(({ id, name }, idx) => {
                 const isChecked = selectedIngredientIdList.includes(id);
                 return (
                   <Box key={generateKey(name)} sx={{ display: 'flex', ml: 2 }}>
