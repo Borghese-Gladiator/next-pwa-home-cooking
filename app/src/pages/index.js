@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
-import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid';
 import { isEmpty } from 'lodash';
 
@@ -28,6 +28,8 @@ const CustomTabPanel = ({ children, value, index, ...other }) => {
 }
 
 export default function Home() {
+  const theme = useTheme();
+
   /**
    * TAB STATE
    */
@@ -170,22 +172,27 @@ export default function Home() {
                 <Typography variant="h5">
                   {cuisine}
                 </Typography>
-                {recipeList.map(({ name }) => (
-                  <Card
-                    key={name}
-                    sx={{
-                      display: "flex",
-                      mt: 1,
-                      ml: 3,
-                      p: 1,
-                      border: 2,
-                      borderColor: selectedRecipes.includes(name) ? "primary.main" : "",
-                    }}>
-                    <CardActionArea onClick={() => handleRecipeSelect(name)}>
-                      <Typography variant="h5">{name}</Typography>
-                    </CardActionArea>
-                  </Card>
-                ))}
+                {recipeList.map(({ name }) => {
+                  const isSelected = selectedRecipes.includes(name);
+                  return (
+                    <Card
+                      key={name}
+                      sx={{
+                        display: "flex",
+                        mt: 1,
+                        ml: 3,
+                        p: 1,
+                        border: 2,
+                        borderColor: isSelected ? "primary.main" : "",
+                        backgroundColor: isSelected ? "primary.main" : "",
+                        color: isSelected ? theme.palette.getContrastText(theme.palette.primary.main) : "",
+                      }}>
+                      <CardActionArea onClick={() => handleRecipeSelect(name)}>
+                        <Typography variant="h5">{name}</Typography>
+                      </CardActionArea>
+                    </Card>
+                  );
+                })}
               </Box>
 
             ))}
