@@ -10,6 +10,13 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/queries` - old SQL queries that are not relevant here (since my data is all in `/app/src/utils/constants.js`)
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
+## To Do
+- [ ] fix: retheme colors so primary is brighter than non-primary on dark mode
+- [ ] feat: dark mode via Material UI
+- [ ] feat: Responsive - support large monitors
+- [ ] feat: border colors on highlight
+- [ ] fix: migrate - move constants.js to constants.json
+
 <details>
 <summary>Old Changes</summary>
 
