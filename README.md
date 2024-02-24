@@ -11,11 +11,13 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
-- [ ] fix: retheme colors so primary is brighter than non-primary on dark mode
-- [ ] feat: dark mode via Material UI
-- [ ] feat: Responsive - support large monitors
-- [ ] feat: border colors on highlight
-- [ ] fix: migrate - move constants.js to constants.json
+- [X] fix: constants - update content to Japanese
+- [X] feat: border colors on highlight
+- [X] fix: retheme colors so primary is brighter than non-primary on dark mode => DONE, changed from primary to active thingy
+- [X] feat: Responsive - support large monitors by turning into columns
+- [ ] feat: color each group
+- [ ] feat: click Chip to highlight ingredients
+- [ ] ref: move index.js content to components in `features/`
 
 <details>
 <summary>Old Changes</summary>
