@@ -189,9 +189,9 @@ export default function Home() {
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
           <Button variant="contained" color="secondary" onClick={() => setSelectedRecipes([])}>Clear</Button>
-          <Stack spacing={1} p={2}>
+          <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
             {Object.entries(recipeGroups).map(([cuisine, recipeList], idx) => (
-              <Box key={generateKey(cuisine)}>
+              <Grid key={generateKey(cuisine)} item xs={12} md={12} lg={6} xl={4}>
                 <Typography variant="h5">
                   {capitalize(cuisine)}
                 </Typography>
@@ -203,12 +203,14 @@ export default function Home() {
                       sx={{
                         display: "flex",
                         mt: 1,
-                        ml: 3,
                         p: 1,
+                        backgroundColor: isSelected ? theme.palette.action.selected : "",
+                        color: isSelected ? theme.palette.text.primary : theme.palette.text.secondary,
                         border: isSelected ? 3 : 0,
+                        borderColor: theme.palette.common.white,
                         // borderColor: isSelected ? "" : "",
-                        backgroundColor: isSelected ? "primary.main" : "",
-                        color: isSelected ? theme.palette.getContrastText(theme.palette.primary.main) : "",
+                        // backgroundColor: isSelected ? "primary.main" : "",
+                        // color: isSelected ? theme.palette.getContrastText(theme.palette.primary.main) : "",
                       }}>
                       <CardActionArea onClick={() => handleRecipeSelect(name)}>
                         <Typography variant="h5">{name}</Typography>
@@ -216,10 +218,9 @@ export default function Home() {
                     </Card>
                   );
                 })}
-              </Box>
-
+              </Grid>
             ))}
-          </Stack>
+          </Grid>
         </CustomTabPanel>
         <CustomTabPanel value={tabValue} index={1}>
           <Button variant="contained" color="secondary" onClick={saveIngredientsToClipboard}>Copy</Button>
@@ -273,7 +274,7 @@ export default function Home() {
           ))}
         </CustomTabPanel>
       </main>
-      <ToastContainer />
+      <ToastContainer theme="dark" />
     </>
   )
 }
