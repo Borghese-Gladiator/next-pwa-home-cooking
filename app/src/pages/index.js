@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 
 import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material'
-import { isEmpty } from 'lodash';
+import { capitalize, isEmpty } from 'lodash';
 import { ToastContainer, toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -193,7 +193,7 @@ export default function Home() {
             {Object.entries(recipeGroups).map(([cuisine, recipeList], idx) => (
               <Box key={generateKey(cuisine)}>
                 <Typography variant="h5">
-                  {cuisine}
+                  {capitalize(cuisine)}
                 </Typography>
                 {recipeList.map(({ name }) => {
                   const isSelected = selectedRecipes.includes(name);
@@ -205,8 +205,8 @@ export default function Home() {
                         mt: 1,
                         ml: 3,
                         p: 1,
-                        border: 2,
-                        borderColor: isSelected ? "primary.main" : "",
+                        border: isSelected ? 3 : 0,
+                        // borderColor: isSelected ? "" : "",
                         backgroundColor: isSelected ? "primary.main" : "",
                         color: isSelected ? theme.palette.getContrastText(theme.palette.primary.main) : "",
                       }}>
