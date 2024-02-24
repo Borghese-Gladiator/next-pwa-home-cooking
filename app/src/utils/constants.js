@@ -40,7 +40,7 @@ export const recipes = [{
     category: "misc",
   }],
 }, {
-  name: "Japanese curry",
+  name: "カレー",
   cuisine: "japanese",
   ingredientList: [{
     name: "carrot",
@@ -60,7 +60,7 @@ export const recipes = [{
   }],
 }, {
   name: "strapatsada",
-  cuisine: "misc",
+  cuisine: "breakfast",
   ingredientList: [{
     name: "olive oil",
     category: "aisle",
@@ -131,7 +131,7 @@ export const recipes = [{
     category: "produce",
   }],
 }, {
-  name: "gyoza",
+  name: "餃子 (gyoza)",
   cuisine: "japanese",
   ingredientList: [{
     name: "water",
@@ -163,7 +163,7 @@ export const recipes = [{
   }],
 }, {
   name: "cilantro lime rice",
-  cuisine: "misc",
+  cuisine: "mexican",
   ingredientList: [{
     name: "rice",
     category: "aisle",
@@ -261,7 +261,7 @@ export const recipes = [{
     category: 'dairy',
   }],
 }, {
-  name: "dashimaki tamago",
+  name: "だし巻き卵",
   cuisine: "japanese",
   ingredientList: [{
     name: "egg",
@@ -283,7 +283,7 @@ export const recipes = [{
     category: "aisle",
   }],
 }, {
-  name: "gyudon",
+  name: "牛丼",
   cuisine: "japanese",
   ingredientList: [{
     name: "fatty beef",
@@ -314,7 +314,7 @@ export const recipes = [{
     category: "aisle",
   }],
 }, {
-  name: "kombu tsukudani",
+  name: "昆布佃煮",
   cuisine: "japanese",
   ingredientList: [{
     name: "kombu",
@@ -349,13 +349,6 @@ export const recipes = [{
     category: "dairy",
   }],
 }, {
-  name: 'lettuce',
-  cuisine: 'misc',
-  ingredientList: [{
-    name: 'lettuce',
-    category: 'produce',
-  }],
-}, {
   name: 'salad',
   cuisine: 'misc',
   ingredientList: [{
@@ -373,7 +366,7 @@ export const recipes = [{
   }],
 }, {
   name: "kimchi spaghetti",
-  cuisine: "misc",
+  cuisine: "korean",
   ingredientList: [{
     name: "spaghetti",
     category: "aisle",
@@ -456,7 +449,7 @@ export const recipes = [{
     category: "dairy",
   }],
 }, {
-  name: "tonkatsu",
+  name: "豚カツ",
   cuisine: "japanese",
   ingredientList: [{
     name: "pork shoulder",
@@ -481,7 +474,7 @@ export const recipes = [{
     category: "produce",
   }],
 }, {
-  name: "omelette rice",
+  name: "オムライス",
   cuisine: "japanese",
   ingredientList: [{
     name: "rice",
@@ -521,7 +514,7 @@ export const recipes = [{
     category: "aisle",
   }],
 }, {
-  name: "oyakodon",
+  name: "親子丼",
   cuisine: "japanese",
   ingredientList: [{
     name: "dashi",
@@ -552,7 +545,7 @@ export const recipes = [{
     category: "dairy",
   }],
 }, {
-  name: "okonomiyaki",
+  name: "お好み焼き",
   cuisine: "japanese",
   ingredientList: [{
     name: "pork belly",
@@ -592,7 +585,7 @@ export const recipes = [{
     category: "misc",
   }],
 }, {
-  name: "sundubu",
+  name: "kimchi jjigae",
   cuisine: "korean",
   ingredientList: [{
     name: "onion",
@@ -780,5 +773,48 @@ export const recipes = [{
   }, {
     name: "egg",
     category: "dairy",
+  }],
+}, {
+  name: "打卤面",
+  cuisine: "chinese",
+  ingredientList: [{
+    name: "Chinese noodles",
+    category: "misc",
+  }, {
+    name: "白胡椒",
+    category: "misc",
+  }, {
+    name: "麻油",
+    category: "misc",
+  }, {
+    name: "egg",
+    category: "dairy",
+  }, {
+    name: "onion",
+    category: "produce",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "carrot",
+    category: "produce",
+  }, {
+    name: "木耳(雲)",
+    category: "misc",
+  }, {
+    name: "chicken bouillon",
+    category: "misc",
+  }, {
+    name: "soy sauce",
+    category: "misc",
+  }, {
+    name: "oyster sauce",
+    category: "misc",
+  }, {
+    name: "sugar",
+    category: "misc",
+  }, {
+    name: "scallions",
+    category: "produce",
   }],
 }]
