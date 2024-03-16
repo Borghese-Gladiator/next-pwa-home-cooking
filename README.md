@@ -48,7 +48,12 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - Grilled Shrimp & Veggie Kebabs - Shrimp, bell peppers, cherry tomatoes, onions, zucchini, lemon, olive oil, salt, pepper, wooden skewers | Thread shrimp and assorted vegetables onto wooden skewers. Drizzle with olive oil, season with salt and pepper, and grill until shrimp is cooked through.
 - Sweet and Spicy Grilled Chicken - Chicken breasts, soy sauce, honey, garlic, ginger, chili flakes | Marinate chicken breasts in a mixture of soy sauce, honey, minced garlic, minced ginger, and chili flakes. Grill until cooked through.
 - Grilled Steak & Veggie Fajitas - Steak (e.g., flank steak), bell peppers, onions, tortillas, lime, olive oil, salt, pepper, cumin, chili powder | Marinate steak in a mixture of lime juice, olive oil, salt, pepper, cumin, and chili powder. Grill steak along with sliced bell peppers and onions. Serve with warm tortillas.
-
+- Pakistani Dinner
+  - chicken rice
+  - hummus
+  - garlic hummus
+  - cucumer salad - pepper, vinegar
+  - kebabs 
 
 <details>
 <summary>Old Changes</summary>
