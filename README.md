@@ -54,6 +54,8 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - garlic hummus
   - cucumer salad - pepper, vinegar
   - kebabs 
+- 红烧 - 米酒, 酱油, 盐, 唐, 鸡精
+
 
 <details>
 <summary>Old Changes</summary>
