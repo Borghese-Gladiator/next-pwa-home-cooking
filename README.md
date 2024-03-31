@@ -54,8 +54,18 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - garlic hummus
   - cucumer salad - pepper, vinegar
   - kebabs 
-- 红烧 - 米酒, 酱油, 盐, 唐, 鸡精
-
+- 红烧 - 米酒, 酱油, 盐, 唐, 鸡
+- chili - https://m.youtube.com/watch?v=ZT3GlECfYoU&pp=ygUMY2hpbGkgcmVjaXBl
+- 炸酱面
+- 三杯鸡
+- huge crockpot of spaghetti sauce with meat and veggies like mushrooms bell pepper onion sausage and hamburger
+- large tray of cooked spaghetti noodles with parsley and oil
+- garlic bread
+- Green beans casserole 
+- Chicken Parm Dinner
+- Chicken Pad Thai
+- Pineapple Fried Rice
+- Yellow Curry
 
 <details>
 <summary>Old Changes</summary>
