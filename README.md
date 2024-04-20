@@ -21,6 +21,7 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [ ] feat: write translation strings for each recipe
 - [ ] feat: click Chip to highlight ingredients
 - [ ] ref: move index.js content to components in `features/`
+- [ ] add optional cooking instructions
 - Tacos Al Pastor
 - Steak & Cheese (cheese whiz)
 - Mapo Tofu (Mapo Doufu): Soft tofu cubes in a spicy chili bean paste sauce with minced meat and topped with Sichuan peppercorns and green onions.
