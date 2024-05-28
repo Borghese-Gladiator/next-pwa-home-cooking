@@ -456,10 +456,10 @@ export const recipes = [{
     category: "meat",
   }, {
     name: "salt",
-    category: "misc",
+    category: "aisle",
   }, {
-    name: "pepper",
-    category: "misc",
+    name: "black pepper",
+    category: "aisle",
   }, {
     name: "flour",
     category: "aisle",
@@ -505,7 +505,7 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "soy sauce",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "mirin",
     category: "aisle",
@@ -521,7 +521,7 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "soy sauce",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "sake",
     category: "aisle",
@@ -530,7 +530,7 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "sugar",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "chicken",
     category: "meat",
@@ -573,7 +573,7 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "Kewpie mayonnaise",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "bonito flakes",
     category: "seafood",
@@ -689,10 +689,10 @@ export const recipes = [{
     category: "produce",
   }, {
     name: "soy sauce",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "sugar",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "mirin",
     category: "aisle",
@@ -723,7 +723,7 @@ export const recipes = [{
     category: "meat",
   }, {
     name: "nutmeg",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "flour",
     category: "aisle",
@@ -738,7 +738,7 @@ export const recipes = [{
     category: "aisle",
   }, {
     name: "honey",
-    category: "misc",
+    category: "aisle",
   }, {
     name: "butter",
     category: "dairy",
@@ -750,8 +750,39 @@ export const recipes = [{
     category: "produce",
   }],
 }, {
-  name: "green shakshukas",
-  cuisine: "misc",
+  name: "shakshuka",
+  cuisine: "middle eastern",
+  ingredientList: [{
+    name: "onion",
+    category: "produce",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "bell pepper",
+    category: "produce",
+  }, {
+    name: "tomato",
+    category: "produce",
+  }, {
+    name: "cilantro",
+    category: "produce",
+  }, {
+    name: "cumin",
+    category: "misc",
+  }, {
+    name: "egg",
+    category: "dairy",
+  }, {
+    name: "feta cheese",
+    category: "dairy",
+  }, {
+    name: "pita bread",
+    category: "aisle",
+  }],
+}, {
+  name: "green shakshuka",
+  cuisine: "middle eastern",
   ingredientList: [{
     name: "onion",
     category: "produce",
@@ -765,7 +796,7 @@ export const recipes = [{
     name: "garlic",
     category: "produce",
   }, {
-    name: "coriander",
+    name: "cilantro",
     category: "produce",
   }, {
     name: "cumin",
@@ -817,4 +848,38 @@ export const recipes = [{
     name: "scallions",
     category: "produce",
   }],
+}, {
+  name: "芋头面包",
+  cuisine: "breakfast",
+  ingredientList: [{
+    name: "芋头面包",
+    category: "chinese bakery",
+  }, ],
+}, {
+  name: "豆沙面包",
+  cuisine: "breakfast",
+  ingredientList: [{
+    name: "豆沙面包",
+    category: "chinese bakery",
+  }, ],
+}, {
+  name: "fruit loops",
+  cuisine: "breakfast",
+  ingredientList: [{
+    name: "fruit loops",
+    category: "aisle",
+  }, {
+    name: "milk",
+    category: "dairy",
+  }, ],
+}, {
+  name: "omelette",
+  cuisine: "breakfast",
+  ingredientList: [{
+    name: "egg",
+    category: "dairy",
+  }, {
+    name: "bell pepper",
+    category: "produce",
+  },],
 }]
