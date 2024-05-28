@@ -166,10 +166,14 @@ export default function Home() {
             <Tab label="Ingredients" />
           </Tabs>
           <Box sx={{ flexGrow: 1 }} />
-          <Fab size="small"><LocalDiningIcon /></Fab>
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
-          <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
+          <Box display='flex' mb={5}>
+            <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
+            <Box sx={{ flexGrow: 1 }} />
+            <Fab size="small"><LocalDiningIcon /></Fab>
+          </Box>
+
           <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
             {Object.entries(cuisineToRecipeListMap).map(([cuisine, recipeList], idx) => (
               <Grid key={generateKey(cuisine)} item xs={12} md={12} lg={6} xl={4}>
