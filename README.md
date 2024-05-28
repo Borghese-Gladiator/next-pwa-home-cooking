@@ -11,9 +11,9 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
-- [ ] update shopping list str to be new line separated with title case titles
+- [ ] ref: convert to TypeScript
+- [ ] ref: move index.js content to components in `features/`
 - [ ] write up below content
-- [ ] add "Restaurants" tab
   - 卤肉饭
   - Ginger pork belly
   - Miso salmon
@@ -70,23 +70,26 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - Mac N Cheese - https://youtube.com/shorts/tyt5l3dNhCM?si=jsfRy4ppaOImJ5jZ
   - Spicy Garlic Parmesan skewers - https://www.youtube.com/shorts/YFIxbMmhctA
   - Chickpea Curry - https://www.youtube.com/shorts/naEpZKwbE_c
-- [ ] feat: write translation strings for each recipe
-- [ ] feat: click Chip to highlight ingredients
-- [ ] ref: move index.js content to components in `features/`
+  - Omelette Rice - https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g
+  - Cantonese Steamed Fish - https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu
+- [ ] feat: divide by both meal type AND cuisine
+  - [ ] rework UI
+  - [ ] update constants
+- [ ] feat: add "Restaurants" model
+  - [ ] add content from kyou-mo-tsuki-ga-kirei
+- [ ] feat: ingredients tab - click Chip to highlight ingredients
 - [ ] add optional cooking instructions
 
-
-RESTAURANTS
-Los amigos 
-
-
 ## Done
+- [X] feat: app/index.js - add date to shoppingListText
+- [X] update shopping list str to be new line separated with title case titles
 - [X] fix: constants - update content to Japanese
 - [X] feat: border colors on highlight
 - [X] fix: retheme colors so primary is brighter than non-primary on dark mode => DONE, changed from primary to active thingy
 - [X] feat: Responsive - support large monitors by turning into columns
 
 ## Iced
+- [ ] feat: write translation strings for each recipe
 - [ ] feat: color each group
 
 <details>
