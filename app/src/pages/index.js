@@ -35,99 +35,78 @@ export default function Home() {
    * TAB STATE
    */
   const [tabValue, setTabValue] = React.useState(0);
-  const handleTabChange = (event, newValue) => {
-    setTabValue(newValue);
-  };
+  const handleTabChange = (_, newValue) => setTabValue(newValue);
 
   /**
-   * RECIPE GROUPS - show recipes in RecipesTab
+   * RECIPE GROUPS - maps cuisine to 
    */
-  const recipeGroups = useMemo(() => {
+  const cuisineToRecipeListMap = useMemo(() => {
     const groups = recipes.reduce((acc, { cuisine, ...recipe }) => {
-      if (!(cuisine in acc)) {
-        acc[cuisine] = [];
-      }
+      acc[cuisine] = acc[cuisine] ?? [];
       acc[cuisine].push(recipe);
       return acc;
     }, {});
     const orderedGroups = Object.keys(groups)
       .sort((categoryA, categoryB) => {
-        if (categoryA === 'misc' && categoryB !== 'misc') {
-          return 1; // 'misc' should come after all other strings
-        } else if (categoryA !== 'misc' && categoryB === 'misc') {
-          return -1; // 'misc' should come after all other strings
-        } else {
-          return categoryA.localeCompare(categoryB);
-        }
+        if (categoryA === 'misc' && categoryB !== 'misc') return 1; // 'misc' should come after all other strings
+        if (categoryA !== 'misc' && categoryB === 'misc') return -1;
+        return categoryA.localeCompare(categoryB);
       })
-      .reduce(
-        (obj, key) => {
-          obj[key] = groups[key];
-          return obj;
-        },
-        {}
-      );
+      .reduce((obj, key) => ({ ...obj, [key]: groups[key] }), {});
     return orderedGroups;
   }, [recipes]);
 
   /**
    * SELECTED RECIPES - select recipes in RecipesTab to show in IngredientsTab
    */
-  const [selectedRecipes, setSelectedRecipes] = useState([]);
-  const {
-    ingredientGroups,
-    ingredientsIdMap
-  } = useMemo(() => {
-    const ingredientsIdMap = {};
-    const allIngredients = selectedRecipes.reduce((acc, curr) => {
-      const recipe = recipes.find(({ name }) => name === curr);
-      return acc.concat(recipe.ingredientList)
-    }, []);
+  const [selectedRecipeNameList, setSelectedRecipeNameList] = useState([]);
+  const categoryToIngredientListGroup = useMemo(() => {
+    const allIngredients = selectedRecipeNameList.flatMap(curr => 
+      recipes.find(({ name }) => name === curr).ingredientList
+    );
     const categoryGroups = allIngredients.reduce((acc, { category, name }) => {
-      if (!(category in acc)) {
-        acc[category] = [];
-      }
-      // unique list of ingredients in each category
-      if (!(name in acc[category])) {
-        acc[category].push(name)
+      acc[category] = acc[category] ?? [];
+      if (!acc[category].includes(name)) {
+        // unique list of ingredients in each category
+        acc[category].push(name);
       }
       return acc;
     }, {});
-    const ingredientGroups = Object.entries(categoryGroups).reduce((acc, [category, ingredients]) => {
-      const countsMap = ingredients.reduce((acc, name) => {
-        acc[name] = (acc[name] || 0) + 1;
-        return acc;
+    const categoryToIngredientObjMap = Object.entries(categoryGroups).reduce((acc, [category, ingredients]) => {
+      // Count occurrences of each ingredient
+      const countsMap = ingredients.reduce((counts, name) => {
+        counts[name] = (counts[name] || 0) + 1;
+        return counts;
       }, {});
-      acc[category] = Object.entries(countsMap).map(([name, count]) => {
-        const text = count > 1 ? `${name} (x${count})` : name;
-        const id = uuidv4();
-        ingredientsIdMap[name] = id;
-        return { name: text, id, };
-      })
-      acc[category].sort(({ name: nameA }, { name: nameB }) => nameA.localeCompare(nameB));
+    
+      // Create ingredient objects with unique IDs
+      acc[category] = Object.entries(countsMap).map(([name, count]) => ({
+        id: uuidv4(),
+        name: count > 1 ? `${name} (x${count})` : name,
+      }));
+    
+      // Sort the ingredients by name
+      acc[category].sort((a, b) => a.name.localeCompare(b.name));
       return acc;
-    }, categoryGroups);
-    const orderedIngredientGroups = Object.keys(ingredientGroups)
+    }, {});
+    const orderedCategoryToIngredientObjMap = Object.keys(categoryToIngredientObjMap)
       .sort((categoryA, categoryB) => categoryA.localeCompare(categoryB))
-      .reduce(
-        (obj, key) => {
-          obj[key] = ingredientGroups[key];
-          return obj;
-        },
-        {}
-      );
-    return {
-      ingredientsIdMap,
-      ingredientGroups: orderedIngredientGroups,
-    }
-  }, [selectedRecipes]);
+      .reduce((obj, key) => ({ ...obj, [key]: categoryToIngredientObjMap[key] }), {});
+    return orderedCategoryToIngredientObjMap;
+  }, [selectedRecipeNameList]);
+  const ingredientIdToNameMap = useMemo(() => (
+    Object.entries(categoryToIngredientListGroup).reduce((acc, [_, group]) => {
+      acc[group.id] = acc[group.name];
+      return acc;
+    }, {})
+  ), [categoryToIngredientListGroup]);
   const handleRecipeSelect = (name) => {
-    if (selectedRecipes.includes(name)) {
+    if (selectedRecipeNameList.includes(name)) {
       // delete from selected
-      setSelectedRecipes(selectedRecipes.filter((curr) => curr !== name));
+      setSelectedRecipeNameList(selectedRecipeNameList.filter((curr) => curr !== name));
     } else {
       // add to selected
-      setSelectedRecipes([...selectedRecipes, name]);
+      setSelectedRecipeNameList([...selectedRecipeNameList, name]);
     }
   }
 
@@ -147,14 +126,14 @@ export default function Home() {
   useEffect(() => {
     // reset selected ingredients if user changes selected recipes
     setSelectedIngredientIdList([]);
-  }, [selectedRecipes])
+  }, [selectedRecipeNameList])
 
 
   /**
    * SAVE INGREDIENTS
    */
   const saveIngredientsToClipboard = () => {
-    const shoppingListText = "SHOPPING LIST\n" + Object.entries(ingredientGroups).reduce((acc, [category, ingredients]) => {
+    const shoppingListText = "SHOPPING LIST\n" + Object.entries(categoryToIngredientListGroup).reduce((acc, [category, ingredients]) => {
       const categoryText = `- ${category}\n`;
       const ingredientsText = ingredients.reduce((acc, ingredient) => {
         acc += `\t- ${ingredient.name}\n`;
@@ -163,7 +142,7 @@ export default function Home() {
       acc += categoryText + ingredientsText
       return acc;
     }, "");
-    const recipeListText = "\n\nRECIPES\n" + selectedRecipes.reduce((acc, name) => `${acc}- ${name}\n`, "");
+    const recipeListText = "\n\nRECIPES\n" + selectedRecipeNameList.reduce((acc, name) => `${acc}- ${name}\n`, "");
     const textToCopy = shoppingListText + recipeListText;
     navigator.clipboard.writeText(textToCopy);
     toast.success("Copied recipes to clipboard!", {
@@ -188,15 +167,15 @@ export default function Home() {
           </Tabs>
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
-          <Button variant="contained" color="secondary" onClick={() => setSelectedRecipes([])}>Clear</Button>
+          <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
           <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
-            {Object.entries(recipeGroups).map(([cuisine, recipeList], idx) => (
+            {Object.entries(cuisineToRecipeListMap).map(([cuisine, recipeList], idx) => (
               <Grid key={generateKey(cuisine)} item xs={12} md={12} lg={6} xl={4}>
                 <Typography variant="h5">
                   {capitalize(cuisine)}
                 </Typography>
                 {recipeList.map(({ name }) => {
-                  const isSelected = selectedRecipes.includes(name);
+                  const isSelected = selectedRecipeNameList.includes(name);
                   return (
                     <Card
                       key={name}
@@ -231,25 +210,25 @@ export default function Home() {
               margin: 0.5
             },
           }}>
-            {selectedRecipes.map((name, index) => (
+            {selectedRecipeNameList.map((name, index) => (
               <Chip
                 key={generateKey(name)}
                 label={name}
               />
             ))}
           </Box>
-          {isEmpty(ingredientGroups) && (
+          {isEmpty(categoryToIngredientListGroup) && (
             <Typography>
               Select recipes to see ingredients
             </Typography>
           )}
-          {Object.entries(ingredientGroups).map(([category, ingredients]) => (
+          {Object.entries(categoryToIngredientListGroup).map(([category, ingredients]) => (
             <Box key={generateKey(category)}>
               <Typography
                 variant="h5"
                 sx={{
                   textDecoration:
-                    ingredients.every((name) => selectedIngredientIdList.includes(ingredientsIdMap[name]))
+                    ingredients.every((name) => selectedIngredientIdList.includes(ingredientIdToNameMap[name]))
                       ? 'line-through' : 'none',
                 }}
               >
