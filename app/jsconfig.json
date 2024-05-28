@@ -25,6 +25,7 @@
       ]
     },
     "checkJs": true,
-    "jsx": "react"
+    "jsx": "react",
+    "lib": ["es2017"]
   }
 }
