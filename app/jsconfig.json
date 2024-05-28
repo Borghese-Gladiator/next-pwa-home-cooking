@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "react": [ "./node_modules/@types/react"],
       "@/*": [
         "./*"
       ],
@@ -26,6 +27,7 @@
     },
     "checkJs": true,
     "jsx": "react",
-    "lib": ["es2017"]
+    "lib": ["es2017"],
+    "strict": true,
   }
 }
