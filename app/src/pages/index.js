@@ -132,7 +132,16 @@ export default function Home() {
    * SAVE INGREDIENTS
    */
   const saveIngredientsToClipboard = () => {
-    const shoppingListText = "SHOPPING LIST\n" + Object.entries(categoryToIngredientListGroup).reduce((acc, [category, ingredients]) => {
+    const getToday = () => {
+      const today = new Date();
+      let mm = today.getMonth() + 1; // Months start at 0!
+      let dd = today.getDate();
+
+      if (dd < 10) dd = '0' + dd;
+      if (mm < 10) mm = '0' + mm;
+      return `${mm}/${dd}`;
+    }
+    const shoppingListText = `${getToday()} SHOPPING LIST\n` + Object.entries(categoryToIngredientListGroup).reduce((acc, [category, ingredients]) => {
       const categoryText = `${startCase(toLower(category))}\n`;
       const ingredientsText = ingredients.reduce((acc, ingredient) => {
         acc += `- ${ingredient.name}\n`;
@@ -208,13 +217,18 @@ export default function Home() {
           </Grid>
         </CustomTabPanel>
         <CustomTabPanel value={tabValue} index={1}>
-          <Button variant="contained" color="secondary" onClick={saveIngredientsToClipboard}>Copy</Button>
+          <Button variant="contained" color="secondary" onClick={saveIngredientsToClipboard} sx={{
+            mb: 3
+          }}>
+            Copy
+          </Button>
           <Box sx={{
             display: 'flex',
             flexWrap: 'wrap',
             '& > *': {
               margin: 0.5
             },
+            mb: 1,
           }}>
             {selectedRecipeNameList.map((name, index) => (
               <Chip
