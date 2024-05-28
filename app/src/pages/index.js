@@ -1,16 +1,15 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
+import Head from 'next/head';
+import React, { useEffect, useMemo, useState } from 'react';
 
-import { Box, Button, Card, CardActionArea, Checkbox, Chip, Grid, IconButton, List, ListItem, ListItemText, Paper, Stack, Tab, Tabs, Typography, useTheme } from '@mui/material'
-import { capitalize, isEmpty } from 'lodash';
+import { Box, Button, Card, CardActionArea, Checkbox, Chip, Fab, Grid, Tab, Tabs, Typography, useTheme } from '@mui/material';
+import { capitalize, isEmpty, startCase, toLower } from 'lodash';
 import { ToastContainer, toast } from 'react-toastify';
 import { v4 as uuidv4 } from 'uuid';
 
 import Navbar from '@/components/Navbar';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { recipes } from '@/utils/constants';
+
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
 
 
 const generateKey = (pre) => {
@@ -61,7 +60,7 @@ export default function Home() {
    */
   const [selectedRecipeNameList, setSelectedRecipeNameList] = useState([]);
   const categoryToIngredientListGroup = useMemo(() => {
-    const allIngredients = selectedRecipeNameList.flatMap(curr => 
+    const allIngredients = selectedRecipeNameList.flatMap(curr =>
       recipes.find(({ name }) => name === curr).ingredientList
     );
     const categoryGroups = allIngredients.reduce((acc, { category, name }) => {
@@ -78,13 +77,13 @@ export default function Home() {
         counts[name] = (counts[name] || 0) + 1;
         return counts;
       }, {});
-    
+
       // Create ingredient objects with unique IDs
       acc[category] = Object.entries(countsMap).map(([name, count]) => ({
         id: uuidv4(),
         name: count > 1 ? `${name} (x${count})` : name,
       }));
-    
+
       // Sort the ingredients by name
       acc[category].sort((a, b) => a.name.localeCompare(b.name));
       return acc;
@@ -134,15 +133,15 @@ export default function Home() {
    */
   const saveIngredientsToClipboard = () => {
     const shoppingListText = "SHOPPING LIST\n" + Object.entries(categoryToIngredientListGroup).reduce((acc, [category, ingredients]) => {
-      const categoryText = `- ${category}\n`;
+      const categoryText = `${startCase(toLower(category))}\n`;
       const ingredientsText = ingredients.reduce((acc, ingredient) => {
-        acc += `\t- ${ingredient.name}\n`;
+        acc += `- ${ingredient.name}\n`;
         return acc;
       }, "");
-      acc += categoryText + ingredientsText
+      acc += categoryText + ingredientsText + "\n"
       return acc;
     }, "");
-    const recipeListText = "\n\nRECIPES\n" + selectedRecipeNameList.reduce((acc, name) => `${acc}- ${name}\n`, "");
+    const recipeListText = "\nRECIPES\n" + selectedRecipeNameList.reduce((acc, name) => `${acc}- ${name}\n`, "");
     const textToCopy = shoppingListText + recipeListText;
     navigator.clipboard.writeText(textToCopy);
     toast.success("Copied recipes to clipboard!", {
@@ -160,11 +159,14 @@ export default function Home() {
       </Head>
       <Navbar />
       <main>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <Tabs value={tabValue} onChange={handleTabChange} centered>
+        <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: 1, borderColor: 'divider' }}>
+          <Box sx={{ flexGrow: 1 }} />
+          <Tabs value={tabValue} onChange={handleTabChange}>
             <Tab label="Recipes" />
             <Tab label="Ingredients" />
           </Tabs>
+          <Box sx={{ flexGrow: 1 }} />
+          <Fab size="small"><LocalDiningIcon /></Fab>
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
           <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
