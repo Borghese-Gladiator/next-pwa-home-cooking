@@ -12,6 +12,9 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 
 ## To Do
 - [ ] ref: convert to TypeScript
+  - rename every file to `ts` or `tsx`
+  - create `tsconfig.json` from `jsconfig.json`
+  - `yarn add -D @types/uuid @types/lodash`
 - [ ] ref: move index.js content to components in `features/`
 - [ ] write up below content
   - 卤肉饭
@@ -73,10 +76,11 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - Omelette Rice - https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g
   - Cantonese Steamed Fish - https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu
 - [ ] feat: divide by both meal type AND cuisine
-  - [ ] rework UI
-  - [ ] update constants
+  - [ ] rework UI to have collapsible meal types AND collapsible cuisines
+  - [ ] update constants to be default "dinner" category
 - [ ] feat: add "Restaurants" model
   - [ ] add content from kyou-mo-tsuki-ga-kirei
+- [ ] feat: loading screen + remove top appbar + replace tab thingy w/ AppBar
 - [ ] feat: ingredients tab - click Chip to highlight ingredients
 - [ ] add optional cooking instructions
 
@@ -87,6 +91,9 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [X] feat: border colors on highlight
 - [X] fix: retheme colors so primary is brighter than non-primary on dark mode => DONE, changed from primary to active thingy
 - [X] feat: Responsive - support large monitors by turning into columns
+
+### Learnings
+Forgot to rename files to `tsx` resulting in weird errors when `ts` like `div not recognized`
 
 ## Iced
 - [ ] feat: write translation strings for each recipe

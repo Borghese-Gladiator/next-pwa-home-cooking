@@ -1,11 +1,11 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme, Theme } from '@mui/material/styles';
 
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
   },
 });
-const theme = darkTheme;
+const theme: Theme = darkTheme;
 
 theme.typography.h5 = {
   fontWeight: 'normal', // Removing bold styling
@@ -17,7 +17,6 @@ theme.typography.h5 = {
     fontSize: '1.5rem', // Equivalent to 24px with a base font size of 16px
   },
 };
-
 
 
 export default theme;

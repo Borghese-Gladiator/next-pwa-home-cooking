@@ -1,4 +1,6 @@
-export const recipes = [{
+import { Recipe } from "@/common/types";
+
+export const recipes: Recipe[] = [{
   name: "pasta",
   cuisine: "italian",
   ingredientList: [{
