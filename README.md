@@ -11,11 +11,8 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
-- [ ] ref: convert to TypeScript
-  - rename every file to `ts` or `tsx`
-  - create `tsconfig.json` from `jsconfig.json`
-  - `yarn add -D @types/uuid @types/lodash`
-- [ ] ref: move index.js content to components in `features/`
+- [ ] ref: create custom hook for selected recipes
+- [ ] fix: boost performance by removing extra loops and utilizing IDs
 - [ ] write up below content
   - 卤肉饭
   - Ginger pork belly
@@ -85,6 +82,11 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [ ] add optional cooking instructions
 
 ## Done
+- [X] ref: move index.js content to components in `features/`
+- [X] ref: convert to TypeScript
+  - rename every file to `ts` or `tsx`
+  - create `tsconfig.json` from `jsconfig.json`
+  - `yarn add -D @types/uuid @types/lodash`
 - [X] feat: app/index.js - add date to shoppingListText
 - [X] update shopping list str to be new line separated with title case titles
 - [X] fix: constants - update content to Japanese
