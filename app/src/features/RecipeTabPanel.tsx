@@ -42,7 +42,7 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
       <Box display='flex' mb={5}>
         <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
         <Box sx={{ flexGrow: 1 }} />
-        <Fab size="small"><LocalDiningIcon /></Fab>
+        <Button variant="contained" color="primary" onClick={() => setOpen(true)}><LocalDiningIcon />Restaurants</Button>
       </Box>
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
         {Object.entries(cuisineToRecipeListMap).map(([cuisine, recipeList], idx) => (
