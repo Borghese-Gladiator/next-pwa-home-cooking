@@ -9,10 +9,6 @@ import Navbar from '@/components/Navbar';
 import RecipeTabPanel from '@/features/RecipeTabPanel';
 import IngredientTabPanel from '@/features/IngredientTabPanel';
 
-const generateKey = (pre: string): string => {
-  return `${pre}_${new Date().getTime()}`;
-}
-
 interface CustomTabPanelProps {
   children?: React.ReactNode;
   value: number;
