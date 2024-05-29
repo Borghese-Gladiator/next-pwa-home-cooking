@@ -11,8 +11,6 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
-- [ ] ref: create custom hook for selected recipes
-- [ ] fix: boost performance by removing extra loops and utilizing IDs
 - [ ] write up below content
   - 卤肉饭
   - Ginger pork belly
@@ -78,8 +76,14 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [ ] feat: add "Restaurants" model
   - [ ] add content from kyou-mo-tsuki-ga-kirei
 - [ ] feat: loading screen + remove top appbar + replace tab thingy w/ AppBar
+- [ ] ref: create custom hook for selected recipes
+- [ ] fix: Vercel - debug failing deploy
+---
+- [ ] feat: dark mode
 - [ ] feat: ingredients tab - click Chip to highlight ingredients
 - [ ] add optional cooking instructions
+- [ ] fix: boost performance by removing extra loops and utilizing IDs
+- [ ] ref: docs - jsdoc per method to clarify logic
 
 ## Done
 - [X] ref: move index.js content to components in `features/`
