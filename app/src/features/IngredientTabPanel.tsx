@@ -92,7 +92,9 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
     const shoppingListText = `${getToday()} SHOPPING LIST\n` + Object.entries(categoryToIngListForSelected).reduce((acc, [category, ingredients]) => {
       const categoryText = `${startCase(toLower(category))}\n`;
       const ingredientsText = ingredients.reduce((acc, ingredient) => {
-        acc += `- ${ingredient}\n`;
+        if (!(ingredient in selectedIngredientNameList)) {
+          acc += `- ${ingredient}\n`;
+        }
         return acc;
       }, "");
       acc += categoryText + ingredientsText + "\n"
