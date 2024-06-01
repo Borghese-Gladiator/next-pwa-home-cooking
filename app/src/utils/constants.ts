@@ -1,4 +1,4 @@
-import { Recipe } from "@/common/types";
+import { Ingredient, Recipe } from "@/common/types";
 
 export const recipes: Recipe[] = [{
   name: "pasta",
@@ -62,7 +62,8 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "strapatsada",
-  cuisine: "breakfast",
+  cuisine: "",
+  meal: "breakfast",
   ingredientList: [{
     name: "olive oil",
     category: "aisle",
@@ -281,7 +282,7 @@ export const recipes: Recipe[] = [{
     name: "soy sauce",
     category: "misc",
   }, {
-    name: "rice wine",
+    name: "米酒",
     category: "aisle",
   }],
 }, {
@@ -884,4 +885,175 @@ export const recipes: Recipe[] = [{
     name: "bell pepper",
     category: "produce",
   },],
-}]
+}, {
+  name: "卤肉饭",
+  cuisine: "chinese",
+  ingredientList: [{
+    name: "pork",
+    category: "meat",
+  }, {
+    name: "onion",
+    category: "produce",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "fried shallot",
+    category: "aisle",
+  }, {
+    name: "soy sauce",
+    category: "aisle",
+  }, {
+    name: "米酒",
+    category: "aisle",
+  }, {
+    name: "冰糖",
+    category: "aisle",
+  }, {
+    name: "酸菜",
+    category: "aisle",
+  }, ],
+}, {
+  name: "ginger pork belly",
+  cuisine: "chinese",
+  ingredientList: [{
+    name: "pork belly",
+    category: "meat",
+  }, {
+    name: "soy sauce",
+    category: "aisle",
+  }, {
+    name: "sugar",
+    category: "aisle",
+  }, {
+    name: "ginger",
+    category: "produce",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "scallion",
+    category: "produce",
+  },],
+}, {
+  name: "miso salmon",
+  cuisine: "japanese",
+  ingredientList: [{
+    name: "salmon",
+    category: "meat",
+  }, {
+    name: "white miso paste",
+    category: "aisle",
+  }, {
+    name: "sesame oil",
+    category: "aisle",
+  }, {
+    name: "mirin",
+    category: "aisle",
+  }, {
+    name: "soy sauce",
+    category: "aisle",
+  }, {
+    name: "sugar",
+    category: "aisle",
+  }, {
+    name: "seasame seeds",
+    category: "aisle",
+  }],
+}, {
+  name: "miso salmon",
+  cuisine: "japanese",
+  ingredientList: [{
+    name: "salmon",
+    category: "meat",
+  }, {
+    name: "white miso paste",
+    category: "aisle",
+  }, {
+    name: "sesame oil",
+    category: "aisle",
+  }, {
+    name: "mirin",
+    category: "aisle",
+  }, {
+    name: "soy sauce",
+    category: "aisle",
+  }, {
+    name: "sugar",
+    category: "aisle",
+  }, {
+    name: "seasame seeds",
+    category: "aisle",
+  }],
+}, {
+  name: "garlic butter noodles",
+  cuisine: "fusion",
+  ingredientList: [{
+    name: "pasta",
+    category: "aisle",
+  }, {
+    name: "butter",
+    category: "dairy",
+  }, {
+    name: "soy sauce",
+    category: "aisle",
+  }, {
+    name: "oyster sauce",
+    category: "aisle",
+  }, {
+    name: "brown sugar",
+    category: "aisle",
+  }, {
+    name: "sesame oil",
+    category: "aisle",
+  }, {
+    name: "scallion",
+    category: "produce",
+  }, {
+    name: "parmesan",
+    category: "dairy",
+  }],
+}, {
+  name: "butter chicken",
+  cuisine: "indian",
+  ingredientList: [{
+    name: "chicken",
+    category: "meat",
+  }, {
+    name: "butter",
+    category: "dairy",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "ginger",
+    category: "produce",
+  }, {
+    name: "brown sugar",
+    category: "aisle",
+  }, {
+    name: "red chili powder",
+    category: "aisle",
+  }, {
+    name: "garam masala",
+    category: "aisle",
+  }, {
+    name: "turmeric",
+    category: "aisle",
+  },  {
+    name: "full fat yogurt",
+    category: "dairy",
+  }, {
+    name: "bay leaves",
+    category: "aisle",
+  }, {
+    name: "can of strained tomato",
+    category: "aisle",
+  }],
+}, 
+].map((curr: any) => {
+  return {
+    ...curr,
+    meal: "dinner"
+  }
+})
