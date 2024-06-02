@@ -1050,10 +1050,364 @@ export const recipes: Recipe[] = [{
     name: "can of strained tomato",
     category: "aisle",
   }],
-}, 
+}, {
+  name: "cheesy chicken burrito",
+  cuisine: "mexican",
+  ingredientList: [{
+    name: "chicken",
+    category: "meat",
+  }, {
+    name: "paprika",
+    category: "aisle",
+  }, {
+    name: "oregano",
+    category: "aisle",
+  }, {
+    name: "chili",
+    category: "aisle",
+  }, {
+    name: "onion powder",
+    category: "aisle",
+  }, {
+    name: "garlic powder",
+    category: "aisle",
+  }, {
+    name: "lime juice",
+    category: "aisle",
+  }, {
+    name: "chicken bouillon",
+    category: "aisle",
+  }, {
+    name: "rice",
+    category: "aisle",
+  }, {
+    name: "salsa verde",
+    category: "aisle",
+  }, {
+    name: "tomato",
+    category: "produce",
+  }, {
+    name: "jalapeno",
+    category: "produce",
+  }, {
+    name: "onion",
+    category: "produce",
+  }, {
+    name: "sour cream",
+    category: "aisle",
+  }, {
+    name: "mozzarella cheese",
+    category: "dairy",
+  }, ],
+}, {
+  "name": "tacos al pastor",
+  "cuisine": "mexican",
+  "ingredientList": [{
+    "name": "guajillo chiles",
+    "category": "aisle"
+  }, {
+    "name": "ancho chiles",
+    "category": "aisle"
+  }, {
+    "name": "pineapple juice",
+    "category": "aisle"
+  }, {
+    "name": "white vinegar",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "white onion",
+    "category": "produce"
+  }, {
+    "name": "achiote paste",
+    "category": "aisle"
+  }, {
+    "name": "oregano",
+    "category": "aisle"
+  }, {
+    "name": "ground cumin",
+    "category": "aisle"
+  }, {
+    "name": "ground black pepper",
+    "category": "aisle"
+  }, {
+    "name": "salt",
+    "category": "aisle"
+  }, {
+    "name": "orange juice",
+    "category": "aisle"
+  }, {
+    "name": "lime juice",
+    "category": "aisle"
+  }, {
+    "name": "pork shoulder",
+    "category": "meat"
+  }, {
+    "name": "corn tortillas",
+    "category": "aisle"
+  }, {
+    "name": "fresh pineapple",
+    "category": "produce"
+  }, {
+    "name": "cilantro",
+    "category": "produce"
+  }, {
+    "name": "lime wedges",
+    "category": "produce"
+  }]
+}, {
+  "name": "steak & cheese",
+  "cuisine": "american",
+  "ingredientList": [{
+    "name": "ribeye steak",
+    "category": "meat"
+  }, {
+    "name": "olive oil",
+    "category": "aisle"
+  }, {
+    "name": "salt",
+    "category": "aisle"
+  }, {
+    "name": "black pepper",
+    "category": "aisle"
+  }, {
+    "name": "provolone cheese",
+    "category": "dairy"
+  }, {
+    "name": "onion",
+    "category": "produce"
+  }, {
+    "name": "green bell pepper",
+    "category": "produce"
+  }, {
+    "name": "hoagie rolls",
+    "category": "bakery"
+  }, {
+    "name": "butter",
+    "category": "dairy"
+  }]
+}, {
+  "name": "mapo tofu",
+  "cuisine": "chinese",
+  "ingredientList": [{
+    "name": "firm tofu",
+    "category": "produce"
+  }, {
+    "name": "ground pork",
+    "category": "meat"
+  }, {
+    "name": "vegetable oil",
+    "category": "aisle"
+  }, {
+    "name": "doubanjiang (fermented broad bean paste)",
+    "category": "aisle"
+  }, {
+    "name": "douchi (fermented black beans)",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "green onions",
+    "category": "produce"
+  }, {
+    "name": "Sichuan peppercorns",
+    "category": "aisle"
+  }, {
+    "name": "chicken broth",
+    "category": "aisle"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "cornstarch",
+    "category": "aisle"
+  }, {
+    "name": "sugar",
+    "category": "aisle"
+  }]
+}, {
+  "name": "kung pao chicken",
+  "cuisine": "chinese",
+  "ingredientList": [{
+    "name": "chicken breast",
+    "category": "meat"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "hoisin sauce",
+    "category": "aisle"
+  }, {
+    "name": "rice vinegar",
+    "category": "aisle"
+  }, {
+    "name": "cornstarch",
+    "category": "aisle"
+  }, {
+    "name": "sesame oil",
+    "category": "aisle"
+  }, {
+    "name": "vegetable oil",
+    "category": "aisle"
+  }, {
+    "name": "dried red chilies",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "green onions",
+    "category": "produce"
+  }, {
+    "name": "bell pepper",
+    "category": "produce"
+  }, {
+    "name": "peanuts",
+    "category": "aisle"
+  }, {
+    "name": "sugar",
+    "category": "aisle"
+  }]
+}, {
+  "name": "dan dan noodles",
+  "cuisine": "chinese",
+  "ingredientList": [{
+    "name": "ground pork",
+    "category": "meat"
+  }, {
+    "name": "wheat noodles",
+    "category": "aisle"
+  }, {
+    "name": "Sichuan peppercorns",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "green onions",
+    "category": "produce"
+  }, {
+    "name": "peanut oil",
+    "category": "aisle"
+  }, {
+    "name": "doubanjiang (fermented broad bean paste)",
+    "category": "aisle"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "chicken broth",
+    "category": "aisle"
+  }, {
+    "name": "black vinegar",
+    "category": "aisle"
+  }, {
+    "name": "sesame paste",
+    "category": "aisle"
+  }, {
+    "name": "sugar",
+    "category": "aisle"
+  }, {
+    "name": "sesame oil",
+    "category": "aisle"
+  }, {
+    "name": "bok choy",
+    "category": "produce"
+  }]
+}, {
+  "name": "twice-cooked pork",
+  "cuisine": "chinese",
+  "ingredientList": [{
+    "name": "pork belly",
+    "category": "meat"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "green onions",
+    "category": "produce"
+  }, {
+    "name": "doubanjiang (fermented broad bean paste)",
+    "category": "aisle"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "sugar",
+    "category": "aisle"
+  }, {
+    "name": "vegetable oil",
+    "category": "aisle"
+  }, {
+    "name": "rice wine",
+    "category": "aisle"
+  }, {
+    "name": "bell pepper",
+    "category": "produce"
+  }, {
+    "name": "cabbage",
+    "category": "produce"
+  }, {
+    "name": "Sichuan peppercorns",
+    "category": "aisle"
+  }]
+}, {
+  "name": "teriyaki chicken",
+  "cuisine": "japanese",
+  "ingredientList": [{
+    "name": "chicken thighs",
+    "category": "meat"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "mirin",
+    "category": "aisle"
+  }, {
+    "name": "sake",
+    "category": "aisle"
+  }, {
+    "name": "sugar",
+    "category": "aisle"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "green onions",
+    "category": "produce"
+  }, {
+    "name": "sesame seeds",
+    "category": "aisle"
+  }, {
+    "name": "vegetable oil",
+    "category": "aisle"
+  }]
+}
 ].map((curr: any) => {
+  // add default values
   return {
+    name: "",
+    cuisine: "",
+    ingredientList: [],
+    meal: "dinner",
     ...curr,
-    meal: "dinner"
   }
 })

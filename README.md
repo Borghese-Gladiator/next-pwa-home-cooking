@@ -17,17 +17,17 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - [X] Miso salmon
   - [X] Garlic butter noodles
   - [X] Butter Chicken - https://youtube.com/shorts/ZkY-nOlaNQQ?si=6YzobNV--UJ9QF2F
-  - [ ] Burrito - https://youtube.com/shorts/5YVmZUK0_8Q?si=Uowd_JhaxFUenX9q
-  - [ ] Tacos Al Pastor
-  - [ ] Steak & Cheese (cheese whiz)
-  - [ ] Mapo Tofu (Mapo Doufu): Soft tofu cubes in a spicy chili bean paste sauce with minced meat and topped with Sichuan peppercorns and green onions.
-  - [ ] Kung Pao Chicken (Gong Bao Ji Ding): Tender chicken, peanuts, and dried chili peppers in a sweet and spicy sauce with Sichuan peppercorns for a numbing kick.
-  - [ ] Dan Dan Noodles (Dan Dan Mian): Spicy noodles topped with a savory sauce made from sesame paste, chili oil, minced meat, and crushed peanuts.
-  - [ ] Twice-Cooked Pork (Hui Guo Rou): Slices of boiled pork belly stir-fried with leeks, garlic, and fermented black beans for a rich and flavorful dish.
+  - [X] Burrito - https://youtube.com/shorts/5YVmZUK0_8Q?si=Uowd_JhaxFUenX9q
+  - [X] Tacos Al Pastor
+  - [X] Steak & Cheese (cheese whiz)
+  - [X] Mapo Tofu (Mapo Doufu): Soft tofu cubes in a spicy chili bean paste sauce with minced meat and topped with Sichuan peppercorns and green onions.
+  - [X] Kung Pao Chicken (Gong Bao Ji Ding): Tender chicken, peanuts, and dried chili peppers in a sweet and spicy sauce with Sichuan peppercorns for a numbing kick.
+  - [X] Dan Dan Noodles (Dan Dan Mian): Spicy noodles topped with a savory sauce made from sesame paste, chili oil, minced meat, and crushed peanuts.
+  - [X] Twice-Cooked Pork (Hui Guo Rou): Slices of boiled pork belly stir-fried with leeks, garlic, and fermented black beans for a rich and flavorful dish.
   - [ ] Sushi Rolls (Maki) - Nori sheets, sushi rice, fresh fish, avocado, cucumber | Make your own sushi rolls using nori (seaweed) sheets, sushi rice, and a variety of fillings like fresh fish, avocado, cucumber, and more. 
   - [ ] Tempura - Seafood (shrimp, squid, etc.), vegetables (sweet potatoes, zucchini, etc.), mushrooms, tempura batter, tentsuyu sauce | Lightly batter and deep-fry seafood, vegetables, and mushrooms. Serve with a dipping sauce like tentsuyu. 
-  - [ ] Teriyaki Chicken - Chicken thighs, soy sauce, mirin, sugar, vegetable oil | Grill or pan-fry chicken glazed with a sweet and savory teriyaki sauce made from soy sauce, mirin, and sugar. 
-  - [ ] Miso Soup - Dashi stock, miso paste, tofu, seaweed, green onions | Prepare a simple and comforting soup using dashi (fish and seaweed broth) and miso paste. Add tofu, seaweed, and green onions.
+  - [X] Teriyaki Chicken - Chicken thighs, soy sauce, mirin, sugar, vegetable oil | Grill or pan-fry chicken glazed with a sweet and savory teriyaki sauce made from soy sauce, mirin, and sugar. 
+  - [X] Miso Soup - Dashi stock, miso paste, tofu, seaweed, green onions | Prepare a simple and comforting soup using dashi (fish and seaweed broth) and miso paste. Add tofu, seaweed, and green onions.
   - [ ] Gyoza - Ground pork, cabbage, garlic, ginger, gyoza wrappers, soy sauce, sesame oil | Fill gyoza wrappers with a mixture of ground pork, cabbage, and garlic. Pan-fry until crispy on the bottom.
   - [ ] Katsudon - Pork cutlets, eggs, onions, soy sauce, mirin, sugar, rice | Deep-fry breaded pork cutlets and serve with eggs and onions in a sweet and savory sauce over rice.
   - [ ] Yakitori - Chicken thighs, soy sauce, mirin, sake, green onions | Skewer and grill chicken pieces, seasoning with a glaze made from soy sauce, mirin, and sake. 
