@@ -4,16 +4,13 @@ Tab Panel to select recipes that I want to cook that week
 
 import { useMemo } from "react";
 
-import LocalDiningIcon from '@mui/icons-material/LocalDining';
-import { Box, Button, Card, CardActionArea, Checkbox, Fab, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, Checkbox, Grid, Typography } from "@mui/material";
 import { capitalize, startCase } from "lodash";
 
 import { Recipe } from "@/common/types";
-import useBoolean from "@/hooks/useBoolean";
 import { recipes } from '@/utils/constants';
 import theme from "@/utils/theme";
 
-import RestaurantModal from "./RestaurantModal";
 
 
 const generateKey = (pre: string): string => {
@@ -21,9 +18,6 @@ const generateKey = (pre: string): string => {
 }
 
 const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelectedRecipeNameList }: any) => {
-  // Restaurant Model
-  const [isOpen, { on: openModal, off: closeModal }] = useBoolean();
-  
   /**
    * RECIPE GROUPS - maps cuisine to 
    */
@@ -45,11 +39,9 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
 
   return (
     <>
-      {isOpen && <RestaurantModal isOpen={isOpen} closeModal={closeModal} />}
       <Box display='flex' mb={5}>
         <Button variant="contained" color="secondary" onClick={() => setSelectedRecipeNameList([])}>Clear</Button>
         <Box sx={{ flexGrow: 1 }} />
-        <Button variant="contained" color="primary" onClick={openModal}><LocalDiningIcon />Restaurants</Button>
       </Box>
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
         {Object.entries(cuisineToRecipeListMap).map(([cuisine, recipeList], idx) => (
