@@ -1,13 +1,40 @@
-import { Ingredient, Recipe } from "@/common/types";
+import { Recipe } from "@/common/types";
 
 export const recipes: Recipe[] = [{
-  name: "pasta",
+  name: "aglio e olio",
   cuisine: "italian",
+  meal: "dinner",
   ingredientList: [{
     name: "pasta",
     category: "aisle",
   }, {
     name: "olive oil",
+    category: "aisle",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "black pepper",
+    category: "misc",
+  }, {
+    name: "pecorino romano",
+    category: "dairy",
+  }],
+}, {
+  name: "Spaghetti Pomodoro (Tomato Basil Pasta)",
+  cuisine: "italian",
+  meal: "dinner",
+  ingredientList: [{
+    name: "pasta",
+    category: "aisle",
+  }, {
+    name: "olive oil",
+    category: "aisle",
+  }, {
+    name: "garlic",
+    category: "produce",
+  }, {
+    name: "peeled canned tomatoes",
     category: "aisle",
   }, {
     name: "tomato",
@@ -16,12 +43,19 @@ export const recipes: Recipe[] = [{
     name: "basil",
     category: "produce",
   }, {
+    name: "lemon juice",
+    category: "aisle",
+  }, {
+    name: "pecorino romano",
+    category: "dairy",
+  }, {
     name: "black pepper",
     category: "misc",
-  }],
+  }, ],
 }, {
   name: "shrimp scampi",
   cuisine: "italian",
+  meal: "dinner",
   ingredientList: [{
     name: "shrimp",
     category: "seafood",
@@ -44,6 +78,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "カレー",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "carrot",
     category: "produce",
@@ -62,8 +97,8 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "strapatsada",
-  cuisine: "",
-  meal: "breakfast",
+  cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "olive oil",
     category: "aisle",
@@ -83,6 +118,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "肉松三明治",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "肉松",
     category: "misc",
@@ -99,6 +135,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "火锅",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "丸子",
     category: "meat",
@@ -136,6 +173,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "餃子 (gyoza)",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "water",
     category: "misc",
@@ -167,6 +205,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "cilantro lime rice",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "rice",
     category: "aisle",
@@ -180,6 +219,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "pico de gallo",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "tomato",
     category: "produce",
@@ -199,6 +239,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "guacamole",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "avocado",
     category: "produce",
@@ -215,6 +256,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "mexican chicken",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "chicken thigh",
     category: "meat",
@@ -231,6 +273,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "mexican beans",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "canned pinto bean",
     category: "canned goods",
@@ -247,6 +290,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: 'mexican rice',
   cuisine: 'mexican',
+  meal: "dinner",
   ingredientList: [{
     name: 'rice',
     category: 'aisle',
@@ -288,6 +332,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "牛丼",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "fatty beef",
     category: "meat",
@@ -319,6 +364,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "昆布佃煮",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "kombu",
     category: "aisle",
@@ -335,6 +381,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "salad burrito",
   cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "large tortilla",
     category: "aisle",
@@ -354,6 +401,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: 'salad',
   cuisine: 'misc',
+  meal: "dinner",
   ingredientList: [{
     name: 'mixed greens',
     category: 'produce',
@@ -370,6 +418,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "kimchi spaghetti",
   cuisine: "korean",
+  meal: "dinner",
   ingredientList: [{
     name: "spaghetti",
     category: "aisle",
@@ -404,6 +453,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "banana bread",
   cuisine: "misc",
+  meal: "snack",
   ingredientList: [{
     name: "banana",
     category: "produce",
@@ -432,6 +482,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "fancy bagel",
   cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "sesame seed bagel",
     category: "aisle",
@@ -454,6 +505,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "豚カツ",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "pork shoulder",
     category: "meat",
@@ -479,6 +531,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "オムライス",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "rice",
     category: "aisle",
@@ -519,6 +572,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "親子丼",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "dashi",
     category: "aisle",
@@ -550,6 +604,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "お好み焼き",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "pork belly",
     category: "meat",
@@ -590,6 +645,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "kimchi jjigae",
   cuisine: "korean",
+  meal: "dinner",
   ingredientList: [{
     name: "onion",
     category: "produce",
@@ -627,6 +683,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "miso soup",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "dashi",
     category: "aisle",
@@ -646,6 +703,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "麻婆豆腐",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "pork loin",
     category: "meat",
@@ -668,6 +726,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "京酱肉丝",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "garlic",
     category: "produce",
@@ -687,6 +746,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "simmered potatoes",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "potatoes",
     category: "produce",
@@ -703,6 +763,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "hamburg steak",
   cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "carrot",
     category: "produce",
@@ -754,7 +815,8 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "shakshuka",
-  cuisine: "middle eastern",
+  cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "onion",
     category: "produce",
@@ -785,7 +847,8 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "green shakshuka",
-  cuisine: "middle eastern",
+  cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "onion",
     category: "produce",
@@ -811,6 +874,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "打卤面",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "Chinese noodles",
     category: "misc",
@@ -853,31 +917,35 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "芋头面包",
-  cuisine: "breakfast",
+  cuisine: "chinese",
+  meal: "breakfast",
   ingredientList: [{
     name: "芋头面包",
     category: "chinese bakery",
-  }, ],
+  },],
 }, {
   name: "豆沙面包",
-  cuisine: "breakfast",
+  cuisine: "chinese",
+  meal: "breakfast",
   ingredientList: [{
     name: "豆沙面包",
     category: "chinese bakery",
-  }, ],
+  },],
 }, {
   name: "fruit loops",
-  cuisine: "breakfast",
+  cuisine: "american",
+  meal: "breakfast",
   ingredientList: [{
     name: "fruit loops",
     category: "aisle",
   }, {
     name: "milk",
     category: "dairy",
-  }, ],
+  },],
 }, {
   name: "omelette",
-  cuisine: "breakfast",
+  cuisine: "american",
+  meal: "breakfast",
   ingredientList: [{
     name: "egg",
     category: "dairy",
@@ -888,6 +956,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "卤肉饭",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "pork",
     category: "meat",
@@ -912,10 +981,11 @@ export const recipes: Recipe[] = [{
   }, {
     name: "酸菜",
     category: "aisle",
-  }, ],
+  },],
 }, {
   name: "ginger pork belly",
   cuisine: "chinese",
+  meal: "dinner",
   ingredientList: [{
     name: "pork belly",
     category: "meat",
@@ -938,31 +1008,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "miso salmon",
   cuisine: "japanese",
-  ingredientList: [{
-    name: "salmon",
-    category: "meat",
-  }, {
-    name: "white miso paste",
-    category: "aisle",
-  }, {
-    name: "sesame oil",
-    category: "aisle",
-  }, {
-    name: "mirin",
-    category: "aisle",
-  }, {
-    name: "soy sauce",
-    category: "aisle",
-  }, {
-    name: "sugar",
-    category: "aisle",
-  }, {
-    name: "seasame seeds",
-    category: "aisle",
-  }],
-}, {
-  name: "miso salmon",
-  cuisine: "japanese",
+  meal: "dinner",
   ingredientList: [{
     name: "salmon",
     category: "meat",
@@ -987,7 +1033,8 @@ export const recipes: Recipe[] = [{
   }],
 }, {
   name: "garlic butter noodles",
-  cuisine: "fusion",
+  cuisine: "misc",
+  meal: "dinner",
   ingredientList: [{
     name: "pasta",
     category: "aisle",
@@ -1016,6 +1063,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "butter chicken",
   cuisine: "indian",
+  meal: "dinner",
   ingredientList: [{
     name: "chicken",
     category: "meat",
@@ -1040,7 +1088,7 @@ export const recipes: Recipe[] = [{
   }, {
     name: "turmeric",
     category: "aisle",
-  },  {
+  }, {
     name: "full fat yogurt",
     category: "dairy",
   }, {
@@ -1053,6 +1101,7 @@ export const recipes: Recipe[] = [{
 }, {
   name: "cheesy chicken burrito",
   cuisine: "mexican",
+  meal: "dinner",
   ingredientList: [{
     name: "chicken",
     category: "meat",
@@ -1098,10 +1147,11 @@ export const recipes: Recipe[] = [{
   }, {
     name: "mozzarella cheese",
     category: "dairy",
-  }, ],
+  },],
 }, {
   "name": "tacos al pastor",
   "cuisine": "mexican",
+  meal: "dinner",
   "ingredientList": [{
     "name": "guajillo chiles",
     "category": "aisle"
@@ -1160,6 +1210,7 @@ export const recipes: Recipe[] = [{
 }, {
   "name": "steak & cheese",
   "cuisine": "american",
+  meal: "dinner",
   "ingredientList": [{
     "name": "ribeye steak",
     "category": "meat"
@@ -1189,8 +1240,9 @@ export const recipes: Recipe[] = [{
     "category": "dairy"
   }]
 }, {
-  "name": "mapo tofu",
+  "name": "麻婆豆腐",
   "cuisine": "chinese",
+  meal: "dinner",
   "ingredientList": [{
     "name": "firm tofu",
     "category": "produce"
@@ -1232,8 +1284,9 @@ export const recipes: Recipe[] = [{
     "category": "aisle"
   }]
 }, {
-  "name": "kung pao chicken",
+  "name": "公保机",
   "cuisine": "chinese",
+  meal: "dinner",
   "ingredientList": [{
     "name": "chicken breast",
     "category": "meat"
@@ -1278,8 +1331,9 @@ export const recipes: Recipe[] = [{
     "category": "aisle"
   }]
 }, {
-  "name": "dan dan noodles",
+  "name": "担担面",
   "cuisine": "chinese",
+  meal: "dinner",
   "ingredientList": [{
     "name": "ground pork",
     "category": "meat"
@@ -1327,8 +1381,9 @@ export const recipes: Recipe[] = [{
     "category": "produce"
   }]
 }, {
-  "name": "twice-cooked pork",
+  "name": "回锅肉",
   "cuisine": "chinese",
+  meal: "dinner",
   "ingredientList": [{
     "name": "pork belly",
     "category": "meat"
@@ -1369,6 +1424,7 @@ export const recipes: Recipe[] = [{
 }, {
   "name": "teriyaki chicken",
   "cuisine": "japanese",
+  meal: "dinner",
   "ingredientList": [{
     "name": "chicken thighs",
     "category": "meat"
@@ -1400,6 +1456,167 @@ export const recipes: Recipe[] = [{
     "name": "vegetable oil",
     "category": "aisle"
   }]
+}, {
+  "name": "chicken parmesan pasta",
+  "cuisine": "american",
+  meal: "dinner",
+  "ingredientList": [{
+    "name": "chicken breast",
+    "category": "meat"
+  }, {
+    "name": "canned crushed tomato",
+    "category": "aisle"
+  }, {
+    "name": "salt",
+    "category": "aisle"
+  }, {
+    "name": "black pepper",
+    "category": "aisle"
+  }, {
+    "name": "onion powder",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "dried basil",
+    "category": "aisle"
+  }, {
+    "name": "dried oregano",
+    "category": "aisle"
+  }, {
+    "name": "chili flakes",
+    "category": "aisle"
+  }, {
+    "name": "pasta",
+    "category": "aisle"
+  }, {
+    "name": "basil",
+    "category": "produce"
+  }, {
+    "name": "olive oil",
+    "category": "aisle"
+  }]
+}, {
+  "name": "sesame chicken",
+  "cuisine": "chinese",
+  meal: "dinner",
+  "ingredientList": [{
+    "name": "chicken breast",
+    "category": "meat"
+  }, {
+    "name": "cornstarch",
+    "category": "aisle"
+  }, {
+    "name": "soy sauce",
+    "category": "aisle"
+  }, {
+    "name": "rice vinegar",
+    "category": "aisle"
+  }, {
+    "name": "honey",
+    "category": "aisle"
+  }, {
+    "name": "brown sugar",
+    "category": "produce"
+  }, {
+    "name": "sesame oil",
+    "category": "aisle"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "ginger",
+    "category": "produce"
+  }, {
+    "name": "white sesame seeds",
+    "category": "aisle"
+  }, {
+    "name": "scallion",
+    "category": "produce"
+  },]
+}, {
+  "name": "椒盐虾",
+  "cuisine": "chinese",
+  meal: "dinner",
+  "ingredientList": [{
+    "name": "shrimp",
+    "category": "meat"
+  }, {
+    "name": "cornstarch",
+    "category": "aisle"
+  }, {
+    "name": "salt",
+    "category": "aisle"
+  }, {
+    "name": "white pepper",
+    "category": "aisle"
+  }, {
+    "name": "black pepper",
+    "category": "aisle"
+  }, {
+    "name": "五香粉",
+    "category": "aisle"
+  }, {
+    "name": "green bell pepper",
+    "category": "produce"
+  }, {
+    "name": "red bell pepper",
+    "category": "produce"
+  }, {
+    "name": "garlic",
+    "category": "produce"
+  }, {
+    "name": "scallion",
+    "category": "produce"
+  }, {
+    "name": "red chilies",
+    "category": "produce"
+  }, {
+    "name": "sugar",
+    "category": "produce"
+  },]
+}, {
+  "name": "Mac N Cheese",
+  "cuisine": "american",
+  meal: "dinner",
+  "ingredientList": [{
+    "name": "pasta (elbows)",
+    "category": "aisle"
+  }, {
+    "name": "gruyere cheese",
+    "category": "dairy"
+  }, {
+    "name": "mozzarella cheese",
+    "category": "dairy"
+  },
+  ]
+}, {
+  "name": "Scallion Oil Noodles",
+  "cuisine": "chinese",
+  meal: "dinner",
+  "ingredientList": [{
+    "name": "scallion",
+    "category": "produce",
+  }, {
+    "name": "shallot",
+    "category": "produce",
+  }, {
+    "name": "soy sauce",
+    "category": "produce",
+  }, {
+    "name": "oyster sauce",
+    "category": "produce",
+  }, {
+    "name": "sugar",
+    "category": "produce",
+  }, {
+    "name": "noodle",
+    "category": "produce",
+  }, {
+    "name": "egg",
+    "category": "dairy",
+  }, ]
 }
 ].map((curr: any) => {
   // add default values

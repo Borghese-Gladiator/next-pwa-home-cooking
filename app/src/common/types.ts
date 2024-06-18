@@ -5,7 +5,7 @@ export interface Ingredient {
 
 export interface Recipe {
   name: string;
-  cuisine: string;
+  cuisine: "american" | "chinese" | "indian" | "japanese" | "korean" | "mexican" | "misc";
   ingredientList: Ingredient[];
   meal: "breakfast" | "lunch" | "dinner" | "snack";
 }
