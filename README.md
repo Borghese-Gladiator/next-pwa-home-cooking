@@ -28,7 +28,8 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - [ ] Tempura - Seafood (shrimp, squid, etc.), vegetables (sweet potatoes, zucchini, etc.), mushrooms, tempura batter, tentsuyu sauce | Lightly batter and deep-fry seafood, vegetables, and mushrooms. Serve with a dipping sauce like tentsuyu. 
   - [X] Teriyaki Chicken - Chicken thighs, soy sauce, mirin, sugar, vegetable oil | Grill or pan-fry chicken glazed with a sweet and savory teriyaki sauce made from soy sauce, mirin, and sugar. 
   - [X] Miso Soup - Dashi stock, miso paste, tofu, seaweed, green onions | Prepare a simple and comforting soup using dashi (fish and seaweed broth) and miso paste. Add tofu, seaweed, and green onions.
-  - [ ] Gyoza - Ground pork, cabbage, garlic, ginger, gyoza wrappers, soy sauce, sesame oil | Fill gyoza wrappers with a mixture of ground pork, cabbage, and garlic. Pan-fry until crispy on the bottom.
+  - [X] Gyoza - Ground pork, cabbage, garlic, ginger, gyoza wrappers, soy sauce, sesame oil | Fill gyoza wrappers with a mixture of ground pork, cabbage, and garlic. Pan-fry until crispy on the bottom.
+  - [X] Sesame Chicken
   - [ ] Katsudon - Pork cutlets, eggs, onions, soy sauce, mirin, sugar, rice | Deep-fry breaded pork cutlets and serve with eggs and onions in a sweet and savory sauce over rice.
   - [ ] Yakitori - Chicken thighs, soy sauce, mirin, sake, green onions | Skewer and grill chicken pieces, seasoning with a glaze made from soy sauce, mirin, and sake. 
   - [ ] Nigiri Sushi - Sushi rice, fresh fish, shrimp, eel, egg | Hand-press sushi rice and top with slices of fresh fish or other ingredients like shrimp, eel, or egg.
@@ -44,7 +45,8 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - [ ] Spaghetti with Crockpot Meatballs - Ground beef, bread crumbs, Parmesan cheese, garlic, onion, eggs, marinara sauce, spaghetti | Mix together ground beef, bread crumbs, Parmesan cheese, minced garlic, minced onion, and eggs. Form into meatballs and cook in a crockpot with marinara sauce. Serve over cooked spaghetti.
   - [ ] Grilled Shrimp & Veggie Kebabs - Shrimp, bell peppers, cherry tomatoes, onions, zucchini, lemon, olive oil, salt, pepper, wooden skewers | Thread shrimp and assorted vegetables onto wooden skewers. Drizzle with olive oil, season with salt and pepper, and grill until shrimp is cooked through.
   - [ ] Sweet and Spicy Grilled Chicken - Chicken breasts, soy sauce, honey, garlic, ginger, chili flakes | Marinate chicken breasts in a mixture of soy sauce, honey, minced garlic, minced ginger, and chili flakes. Grill until cooked through.
-  - [ ] Grilled Steak & Veggie Fajitas - Steak (e.g., flank steak), bell peppers, onions, tortillas, lime, olive oil, salt, pepper, cumin, chili powder | Marinate steak in a mixture of lime juice, olive oil, salt, pepper, cumin, and chili powder. Grill steak along with sliced bell peppers and onions. Serve with warm tortillas.
+  - [ ] Grilled Steak & Veggie Fajitas - Steak (e.g., flank steak), bell peppers, onions, tortillas, lime, olive oil, salt, pepper, cumin, chili powder | Marinate steak in a mixture of lime juice, olive oil, salt, pepper, cumin, and chili powder. Grill steak along with sliced bell peppers and onions. Serve with warm tortillas
+  - [X] 椒盐虾
   - [ ] Pakistani Dinner
     - chicken rice
     - hummus
@@ -70,15 +72,17 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - Chickpea Curry - https://www.youtube.com/shorts/naEpZKwbE_c
   - Omelette Rice - https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g
   - Cantonese Steamed Fish - https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu
-- [ ] feat: divide by both meal type AND cuisine
-  - [ ] rework UI to have collapsible meal types AND collapsible cuisines
-  - [ ] update constants to be default "dinner" category
-- [ ] feat: add "Restaurants" model
-  - [ ] add content from kyou-mo-tsuki-ga-kirei
-- [ ] feat: loading screen + remove top appbar + replace tab thingy w/ AppBar
-- [ ] ref: create custom hook for selected recipes
-- [ ] fix: Vercel - debug failing deploy
+  - Bake
+    - Banana Bread
+    - Cheesecake - cottage cheese, yogurt, egg, toppings (strawberries)
+  - Sesame Chicken - chicken, cornstarch, soy sauce, rice vinegar, honey, brown sugar, sesame oil
+  - Mac N Cheese
+  - Grilled Cheese - sourdough, American cheese, butter
+  - Chicken Sandwich - American cheese, tomato, lettuce
+  - Japanese Croquette (クロッケー)
+  - Tartar Sauce
 ---
+- [ ] ref: create custom hook for selected recipes
 - [ ] feat: dark mode
 - [ ] feat: ingredients tab - click Chip to highlight ingredients
 - [ ] add optional cooking instructions
@@ -86,6 +90,14 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [ ] ref: docs - jsdoc per method to clarify logic
 
 ## Done
+- [X] feat: loading screen + remove top appbar + replace AppBar w/ tab thingy => DONE, barely used tho since loading is instant
+- [X] fix: Vercel - debug failing deploy
+- [X] feat: divide by both meal type AND cuisine
+  - [X] rework UI to have collapsible meal types AND collapsible cuisines
+  - [X] update constants to be default "dinner" category
+- [X] feat: add "Restaurants" model
+  - [X] add content from kyou-mo-tsuki-ga-kirei
+---
 - [X] fix: remove selected items from copyable shopping list
 - [X] ref: move index.js content to components in `features/`
 - [X] ref: convert to TypeScript
