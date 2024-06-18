@@ -2,15 +2,16 @@
 Tab Panel to select recipes that I want to cook that week
 */
 
-import { useId, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
+import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
 import { Accordion, AccordionDetails, AccordionSummary, Box, Button, Card, CardActionArea, Checkbox, Container, Grid, Typography } from "@mui/material";
 import { capitalize, startCase, uniqueId } from "lodash";
 
 import { Recipe } from "@/common/types";
 import { recipes } from '@/utils/constants';
 import theme from "@/utils/theme";
-import { ExpandMore as ExpandMoreIcon } from "@mui/icons-material";
+
 
 
 const RecipeCardList = ({
@@ -121,7 +122,7 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
       })
       .reduce((obj, key) => ({ ...obj, [key]: groups[key] }), {});
     return orderedGroups;
-  }, [recipes]);
+  }, []);
 
   /**
    * RECIPE Filter

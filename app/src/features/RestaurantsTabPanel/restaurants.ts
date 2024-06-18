@@ -1,6 +1,6 @@
 const restaurantText = `
 <details>
-<summary><b>Allston</b></summary>
+<summary style="font-size: 25px;"><b>Allston</b></summary>
 
 - C Fruit Life
 - DLY hot pot
@@ -21,7 +21,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Boston</b></summary>
+<summary style="font-size: 25px;"><b>Boston</b></summary>
 
 - Kenzoku Mazesoba
 - Los Amigos Taqueria
@@ -31,7 +31,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Burlington</b></summary>
+<summary style="font-size: 25px;"><b>Burlington</b></summary>
 
 - Cafe Escadrille
 - Capital Grille
@@ -42,7 +42,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Cambridge</b></summary>
+<summary style="font-size: 25px;"><b>Cambridge</b></summary>
 
 - Cafe Mami
 - Go Go Curry (in H-Mart)
@@ -52,7 +52,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Marlborough</b></summary>
+<summary style="font-size: 25px;"><b>Marlborough</b></summary>
 
 - 110 Grill
 - Kinzen
@@ -64,7 +64,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Natick</b></summary>
+<summary style="font-size: 25px;"><b>Natick</b></summary>
 
 - Arturo's Restaurante
 - Bocado Tapas Wine Bar
@@ -85,14 +85,14 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Newton</b></summary>
+<summary style="font-size: 25px;"><b>Newton</b></summary>
 
 - Grandma's Kitchen
 
 </details>
 
 <details>
-<summary><b>Quincy</b></summary>
+<summary style="font-size: 25px;"><b>Quincy</b></summary>
 
 - Taipei Cuisine
 - Big Fun Cafe 大茶飯
@@ -104,7 +104,7 @@ const restaurantText = `
 </details>
 
 <details>
-<summary><b>Westborough</b></summary>
+<summary style="font-size: 25px;"><b>Westborough</b></summary>
 
 - McDonalds
 - Sapporo

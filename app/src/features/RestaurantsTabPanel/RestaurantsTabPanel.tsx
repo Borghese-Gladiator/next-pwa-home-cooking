@@ -6,8 +6,10 @@ import rehypeRaw from 'rehype-raw';
 const RestaurantsTabPanel = () => {
   return (
     <Container maxWidth="xs">
-      <Box display="flex" flexDirection="column" justifyContent="center" sx={{ fontSize: 40 }}>
-        <ReactMarkdown children={markdownContent} rehypePlugins={[rehypeRaw]} />
+      <Box display="flex" flexDirection="column" justifyContent="center">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+          {markdownContent}
+        </ReactMarkdown>
       </Box>
     </Container>
   )
