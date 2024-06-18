@@ -6,7 +6,7 @@ import { useMemo } from "react";
 
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import { Box, Button, Card, CardActionArea, Checkbox, Fab, Grid, Typography } from "@mui/material";
-import { capitalize } from "lodash";
+import { capitalize, startCase } from "lodash";
 
 import { Recipe } from "@/common/types";
 import useBoolean from "@/hooks/useBoolean";
@@ -73,7 +73,7 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
                 >
                   <CardActionArea onClick={() => handleRecipeSelect(name)}>
                     <Box display="flex" alignItems="center">
-                      <Typography variant="h5">{name}</Typography>
+                      <Typography variant="h5">{startCase(name)}</Typography>
                       <Box sx={{ flexGrow: 1 }} />
                       <Checkbox checked={isSelected} />
                     </Box>

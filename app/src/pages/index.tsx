@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 
 import RecipeTabPanel from '@/features/RecipeTabPanel';
 import IngredientTabPanel from '@/features/IngredientTabPanel';
+import RestaurantsTabPanel from '@/features/RestaurantsTabPanel';
 
 interface CustomTabPanelProps {
   children?: React.ReactNode;
@@ -74,6 +75,7 @@ export default function Home() {
           <Tabs value={tabValue} onChange={handleTabChange}>
             <Tab label="Recipes" />
             <Tab label="Ingredients" />
+            <Tab label="Restaurants" />
           </Tabs>
           <Box sx={{ flexGrow: 1 }} />
         </Box>
@@ -83,6 +85,10 @@ export default function Home() {
 
         <CustomTabPanel value={tabValue} index={1}>
           <IngredientTabPanel selectedRecipeNameList={selectedRecipeNameList} />
+        </CustomTabPanel>
+
+        <CustomTabPanel value={tabValue} index={2}>
+          <RestaurantsTabPanel />
         </CustomTabPanel>
 
         <ToastContainer />
