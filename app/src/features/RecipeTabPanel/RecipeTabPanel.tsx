@@ -29,19 +29,25 @@ const RecipeTabPanel = () => {
   }
 
   const cuisineToRecipeListMap: Record<string, Recipe[]> = (() => {
-    const groups = recipes.reduce<Record<string, Omit<Recipe, 'cuisine'>[]>>((acc, { cuisine, ...recipe }) => {
+    const cuisineGroups = recipes.reduce<Record<string, Omit<Recipe, 'cuisine'>[]>>((acc, { cuisine, ...recipe }) => {
       acc[cuisine] = acc[cuisine] ?? [];
       acc[cuisine].push(recipe);
       return acc;
     }, {});
-    const orderedGroups = Object.keys(groups)
+    const sortedRecipesCuisineGroups = Object.keys(cuisineGroups).reduce((acc, cuisine) => {
+      acc[cuisine] = cuisineGroups[cuisine].sort(({ name: nameA }, { name: nameB }) => 
+        nameA.localeCompare(nameB)
+      );
+      return acc;
+    }, {} as Record<string, Omit<Recipe, 'cuisine'>[]>);
+    const orderedCuisineGroups = Object.keys(sortedRecipesCuisineGroups)
       .sort((categoryA, categoryB) => {
         if (categoryA === 'misc' && categoryB !== 'misc') return 1; // 'misc' should come after all other strings
         if (categoryA !== 'misc' && categoryB === 'misc') return -1;
         return categoryA.localeCompare(categoryB);
       })
-      .reduce((obj, key) => ({ ...obj, [key]: groups[key] }), {});
-    return orderedGroups;
+      .reduce((obj, key) => ({ ...obj, [key]: cuisineGroups[key] }), {});
+    return orderedCuisineGroups;
   })();
 
   return (
