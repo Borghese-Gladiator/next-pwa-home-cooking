@@ -9,7 +9,7 @@ import Navbar from '@/components/Navbar';
 import RecipeTabPanel from '@/features/RecipeTabPanel';
 import IngredientTabPanel from '@/features/IngredientTabPanel';
 import RestaurantsTabPanel from '@/features/RestaurantsTabPanel';
-import useRecipeNamesList, { SelectedRecipesProvider } from '@/hooks/useRecipeNamesList';
+import { SelectedRecipesProvider } from '@/hooks/useRecipeNamesList';
 import { DropdownProvider } from '../hooks/useDropdown';
 
 interface CustomTabPanelProps {
@@ -51,9 +51,14 @@ export default function Home() {
     <SelectedRecipesProvider initialList={[]}>
       <Head>
         <title>Home Cooking PWA</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Recipes and corresponding ingredients for reference when planning meals + shopping for the upcoming week" />
+        <link rel="icon" href="/images/favicon.ico" />
+        
+        {/* PWA mobile support */}
+        <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       </Head>
       <main>
         <Box sx={{ display: 'flex', alignItems: 'center', borderBottom: 1, borderColor: 'divider' }}>
