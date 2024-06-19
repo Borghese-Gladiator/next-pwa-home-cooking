@@ -123,7 +123,7 @@ const IngredientTabPanel = () => {
             </Typography>
             {ingredients.map((name) => {
               console.log('name', name)
-              const isSelected = selectedIngredientNameList.includes(name);
+              const isSelected = selectedIngredientNameList.includes(name); // isSelected means I already have this ingredient at home
               return (
                 <Card
                   key={generateKey(name)}
@@ -132,16 +132,15 @@ const IngredientTabPanel = () => {
                     mt: 1,
                     p: 1,
                     textDecoration: isSelected ? 'line-through' : 'none',
-                    backgroundColor: isSelected ? theme.palette.action.selected : "",
-                    color: isSelected ? theme.palette.text.primary : theme.palette.text.secondary,
-                    border: isSelected ? 2 : 1,
+                    backgroundColor: isSelected ? "" : theme.palette.action.selected,
+                    color: isSelected ? theme.palette.text.secondary : theme.palette.text.primary,
+                    border: isSelected ? 1 : 2,
                   }}
                 >
                   <CardActionArea onClick={() => handleIngredientSelect(name)}>
                     <Box display="flex" alignItems="center">
                       <Typography variant="h5">{name}</Typography>
                       <Box sx={{ flexGrow: 1 }} />
-                      <Checkbox checked={isSelected} />
                     </Box>
                   </CardActionArea>
                 </Card>
