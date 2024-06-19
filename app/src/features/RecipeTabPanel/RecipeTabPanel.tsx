@@ -15,6 +15,7 @@ import useDropdown from "@/src/hooks/useDropdown";
 import useRecipeNamesList from "@/src/hooks/useRecipeNamesList";
 import MealFilterBtnList from "./MealFilterBtnList";
 import RecipeCardList from "./RecipeCardList";
+import SelectedRecipeList from "../SelectedRecipeList";
 
 
 const RecipeTabPanel = () => {
@@ -53,6 +54,7 @@ const RecipeTabPanel = () => {
         <Box sx={{ flexGrow: 1 }} />
         <MealFilterBtnList mealFilterSet={mealFilterSet} setMealFilterSet={setMealFilterSet} />
       </Box>
+      <SelectedRecipeList />
       {Object.entries(cuisineToRecipeListMap)
         .map(([cuisine, totalRecipeList], idx) => (
           <Accordion key={uniqueId()} sx={{ fontSize: '1.5rem' }} expanded={openDropdownObj[cuisine]} onChange={() => toggleDropdown(cuisine)}>

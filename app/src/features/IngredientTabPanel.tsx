@@ -11,6 +11,7 @@ import { recipes } from '@/utils/constants';
 import theme from "@/utils/theme";
 import { Ingredient } from "../common/types";
 import useRecipeNamesList from "../hooks/useRecipeNamesList";
+import SelectedRecipeList from "./SelectedRecipeList";
 
 
 
@@ -115,6 +116,8 @@ const IngredientTabPanel = () => {
         <Button variant="contained" color="primary" onClick={saveIngredientsToClipboard}>Copy</Button>
       </Box>
 
+      <SelectedRecipeList />
+      
       <Grid container rowSpacing={3} columnSpacing={{ xs: 1, sm: 20, md: 3 }}>
         {Object.entries(categoryToIngListForSelected).map(([category, ingredients], idx) => (
           <Grid key={category} item xs={12} md={12} lg={6} xl={4}>
@@ -134,7 +137,7 @@ const IngredientTabPanel = () => {
                     textDecoration: isSelected ? 'line-through' : 'none',
                     backgroundColor: isSelected ? "" : theme.palette.action.selected,
                     color: isSelected ? theme.palette.text.secondary : theme.palette.text.primary,
-                    border: isSelected ? 1 : 2,
+                    border: isSelected ? 0 : 1,
                   }}
                 >
                   <CardActionArea onClick={() => handleIngredientSelect(name)}>

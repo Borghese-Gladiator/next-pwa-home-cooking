@@ -53,7 +53,7 @@ export default function Home() {
         <title>Home Cooking PWA</title>
         <meta name="description" content="Recipes and corresponding ingredients for reference when planning meals + shopping for the upcoming week" />
         <link rel="icon" href="/images/favicon.ico" />
-        
+
         {/* PWA mobile support */}
         <meta name="viewport" content="width=device-width; initial-scale=1; viewport-fit=cover" />
         <meta name="mobile-web-app-capable" content="yes" />
@@ -70,9 +70,10 @@ export default function Home() {
           </Tabs>
           <Box sx={{ flexGrow: 1 }} />
         </Box>
+        
         <CustomTabPanel value={tabValue} index={0}>
-        <DropdownProvider>
-          <RecipeTabPanel />
+          <DropdownProvider>
+            <RecipeTabPanel />
           </DropdownProvider>
         </CustomTabPanel>
 
