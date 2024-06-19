@@ -110,7 +110,7 @@ const IngredientTabPanel = () => {
   return (
     <Container maxWidth="md">
       <Box display='flex' mb={5}>
-        <Button variant="contained" color="secondary" onClick={() => setSelectedIngredientNameList([])}>Clear</Button>
+        <Button variant="outlined" color="secondary" onClick={() => setSelectedIngredientNameList([])}>Clear</Button>
         <Box sx={{ flexGrow: 1 }} />
         <Button variant="contained" color="primary" onClick={saveIngredientsToClipboard}>Copy</Button>
       </Box>
