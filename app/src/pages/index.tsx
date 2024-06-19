@@ -9,6 +9,8 @@ import Navbar from '@/components/Navbar';
 import RecipeTabPanel from '@/features/RecipeTabPanel';
 import IngredientTabPanel from '@/features/IngredientTabPanel';
 import RestaurantsTabPanel from '@/features/RestaurantsTabPanel';
+import useRecipeNamesList, { SelectedRecipesProvider } from '@/hooks/useRecipeNamesList';
+import { DropdownProvider } from '../hooks/useDropdown';
 
 interface CustomTabPanelProps {
   children?: React.ReactNode;
@@ -45,23 +47,8 @@ export default function Home() {
   const [tabValue, setTabValue] = useState<number>(0);
   const handleTabChange = (_: React.ChangeEvent<{}>, newValue: number) => setTabValue(newValue);
 
-  /**
-   * SELECTED RECIPES - select recipes in RecipesTab to show in IngredientsTab
-   */
-  const [selectedRecipeNameList, setSelectedRecipeNameList] = useState<string[]>([]);
-  
-  const handleRecipeSelect = (name: string) => {
-    if (selectedRecipeNameList.includes(name)) {
-      // delete from selected
-      setSelectedRecipeNameList(selectedRecipeNameList.filter((curr) => curr !== name));
-    } else {
-      // add to selected
-      setSelectedRecipeNameList([...selectedRecipeNameList, name]);
-    }
-  }
-
   return (
-    <>
+    <SelectedRecipesProvider initialList={[]}>
       <Head>
         <title>Home Cooking PWA</title>
         <meta name="description" content="" />
@@ -79,11 +66,13 @@ export default function Home() {
           <Box sx={{ flexGrow: 1 }} />
         </Box>
         <CustomTabPanel value={tabValue} index={0}>
-          <RecipeTabPanel handleRecipeSelect={handleRecipeSelect} selectedRecipeNameList={selectedRecipeNameList} setSelectedRecipeNameList={setSelectedRecipeNameList} />
+        <DropdownProvider>
+          <RecipeTabPanel />
+          </DropdownProvider>
         </CustomTabPanel>
 
         <CustomTabPanel value={tabValue} index={1}>
-          <IngredientTabPanel selectedRecipeNameList={selectedRecipeNameList} />
+          <IngredientTabPanel />
         </CustomTabPanel>
 
         <CustomTabPanel value={tabValue} index={2}>
@@ -92,6 +81,6 @@ export default function Home() {
 
         <ToastContainer />
       </main>
-    </>
+    </SelectedRecipesProvider>
   );
 }

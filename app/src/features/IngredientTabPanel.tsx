@@ -3,27 +3,28 @@ Tab Panel to show ingredients list based on selected recipes
 */
 import { useEffect, useMemo, useState } from "react";
 
-import { Box, Button, Card, CardActionArea, Checkbox, Grid, Typography } from "@mui/material";
+import { Box, Button, Card, CardActionArea, Checkbox, Container, Grid, Typography } from "@mui/material";
 import { startCase, toLower } from "lodash";
 import { toast } from 'react-toastify';
 
 import { recipes } from '@/utils/constants';
 import theme from "@/utils/theme";
 import { Ingredient } from "../common/types";
+import useRecipeNamesList from "../hooks/useRecipeNamesList";
+
 
 
 const generateKey = (pre: string): string => {
   return `${pre}_${new Date().getTime()}`;
 }
 
-const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
-  console.log("selectedRecipeNameList", selectedRecipeNameList);
+const IngredientTabPanel = () => {
+  const { selectedRecipes, } = useRecipeNamesList();
 
   const categoryToIngListForSelected: Record<string, string[]> = useMemo(() => {
-    const allSelectedIngList = selectedRecipeNameList.flatMap((currName: string) =>
+    const allSelectedIngList = Array.from(selectedRecipes).flatMap((currName: string) =>
       recipes.find(({ name }) => name === currName)?.ingredientList || []
     );
-    console.log("allSelectedIngList", allSelectedIngList);
 
     // groups selected ingredients by category
     const categoryToIngNamesMap: Record<string, string[]> = allSelectedIngList.reduce((acc: Record<string, string[]>, { category, name }: Ingredient) => {
@@ -55,8 +56,7 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
       .sort((categoryA, categoryB) => categoryA.localeCompare(categoryB))
       .reduce((obj, key) => ({ ...obj, [key]: userFacingCategoryToIngredientStrMap[key] }), {});
     return orderedUserFacingCategoryToIngredientStrMap;
-  }, [selectedRecipeNameList]);
-  console.log("selectedIngListGroupedByCategory", categoryToIngListForSelected);
+  }, [selectedRecipes]);
 
   /**
    * SELECTED INGREDIENTS - mark as strikethrough on IngredientsTab
@@ -72,9 +72,8 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
     }
   }
   useEffect(() => {
-    // reset selected ingredients if user changes selected recipes
     setSelectedIngredientNameList([]);
-  }, [selectedRecipeNameList])
+  }, [])
 
   //=============================
   //    UTILS
@@ -100,7 +99,7 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
       acc += categoryText + ingredientsText + "\n"
       return acc;
     }, "");
-    const recipeListText = "\nRECIPES\n" + selectedRecipeNameList.reduce((acc: string, name: string) => `${acc}- ${name}\n`, "");
+    const recipeListText = "\nRECIPES\n" + Array.from(selectedRecipes).reduce((acc: string, name: string) => `${acc}- ${name}\n`, "");
     const textToCopy = shoppingListText + recipeListText;
     navigator.clipboard.writeText(textToCopy);
     toast.success("Copied recipes to clipboard!", {
@@ -109,7 +108,7 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
   }
 
   return (
-    <>
+    <Container maxWidth="md">
       <Box display='flex' mb={5}>
         <Button variant="contained" color="secondary" onClick={() => setSelectedIngredientNameList([])}>Clear</Button>
         <Box sx={{ flexGrow: 1 }} />
@@ -151,7 +150,7 @@ const IngredientTabPanel = ({ selectedRecipeNameList }: any) => {
           </Grid>
         ))}
       </Grid>
-    </>
+    </Container>
   )
 }
 

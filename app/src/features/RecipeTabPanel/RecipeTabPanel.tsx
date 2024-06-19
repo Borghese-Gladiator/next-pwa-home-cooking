@@ -10,105 +10,24 @@ import { capitalize, startCase, uniqueId } from "lodash";
 
 import { Recipe } from "@/common/types";
 import { recipes } from '@/utils/constants';
-import theme from "@/utils/theme";
+
+import useDropdown from "@/src/hooks/useDropdown";
+import useRecipeNamesList from "@/src/hooks/useRecipeNamesList";
+import MealFilterBtnList from "./MealFilterBtnList";
+import RecipeCardList from "./RecipeCardList";
 
 
+const RecipeTabPanel = () => {
+  const { openDropdownObj, toggleDropdown } = useDropdown()
+  const { resetRecipes, } = useRecipeNamesList();
+  const [mealFilterSet, setMealFilterSet] = useState<Set<string>>(new Set());
 
-const RecipeCardList = ({
-  cuisine,
-  recipeList,
-  selectedRecipeNameList,
-  handleRecipeSelect,
-  mealFilterSet,
-}: any) => {
-  const filteredRecipeList = recipeList
-    .filter(({ meal }: { meal: string }) => mealFilterSet.size === 0 || mealFilterSet.has(meal))
-  
-    return (
-    <>
-      {filteredRecipeList.map(({ name }: { name: string }) => {
-        const isSelected = selectedRecipeNameList.includes(name);
+  const resetState = () => {
+    resetRecipes();
+    setMealFilterSet(new Set())
+  }
 
-        return (
-          <Card
-            key={uniqueId()}
-            sx={{
-              display: 'flex',
-              mt: 1,
-              p: 1,
-              backgroundColor: isSelected ? theme.palette.action.selected : '',
-              color: isSelected ? theme.palette.text.primary : theme.palette.text.secondary,
-              border: isSelected ? 2 : 1,
-            }}
-          >
-            <CardActionArea onClick={() => handleRecipeSelect(name)}>
-              <Box display="flex" alignItems="center">
-                <Typography variant="h5">{startCase(name)}</Typography>
-                <Box sx={{ flexGrow: 1 }} />
-                <Checkbox checked={isSelected} />
-              </Box>
-            </CardActionArea>
-          </Card>
-        );
-      })}
-    </>
-  );
-}
-
-const MealFilterBtnList = ({ mealFilterSet, setMealFilterSet }: any) => {
-  const toggleMealType = (meal: "breakfast" | "lunch" | "dinner" | "snack") => {
-    setMealFilterSet((prevMealFilterSet: Set<string>) => {
-      const updatedMealTypes = new Set(prevMealFilterSet);
-      if (updatedMealTypes.has(meal)) {
-        updatedMealTypes.delete(meal);
-      } else {
-        updatedMealTypes.add(meal);
-      }
-      return updatedMealTypes;
-    });
-  };
-  return (
-    <Box
-      display="flex"
-      justifyContent="center"
-    >
-      <Button
-        size="small"
-        onClick={() => toggleMealType("breakfast")}
-        variant={mealFilterSet.has("breakfast") ? "contained" : "text"}
-      >
-        Breakfast
-      </Button>
-      <Button
-        size="small"
-        variant={mealFilterSet.has("lunch") ? "contained" : "text"}
-        onClick={() => toggleMealType("lunch")}
-      >
-        Lunch
-      </Button>
-      <Button
-        size="small"
-        variant={mealFilterSet.has("dinner") ? "contained" : "text"}
-        onClick={() => toggleMealType("dinner")}
-      >
-        Dinner
-      </Button>
-      <Button
-        size="small"
-        variant={mealFilterSet.has("snack") ? "contained" : "text"}
-        onClick={() => toggleMealType("snack")}
-      >
-        Snack
-      </Button>
-    </Box>
-  )
-}
-
-const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelectedRecipeNameList }: any) => {
-  /**
-   * RECIPE GROUPS - maps cuisine to 
-   */
-  const cuisineToRecipeListMap: Record<string, Recipe[]> = useMemo(() => {
+  const cuisineToRecipeListMap: Record<string, Recipe[]> = (() => {
     const groups = recipes.reduce<Record<string, Omit<Recipe, 'cuisine'>[]>>((acc, { cuisine, ...recipe }) => {
       acc[cuisine] = acc[cuisine] ?? [];
       acc[cuisine].push(recipe);
@@ -122,17 +41,7 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
       })
       .reduce((obj, key) => ({ ...obj, [key]: groups[key] }), {});
     return orderedGroups;
-  }, []);
-
-  /**
-   * RECIPE Filter
-   */
-  const [mealFilterSet, setMealFilterSet] = useState<Set<string>>(new Set());
-
-  const resetState = () => {
-    setSelectedRecipeNameList([])
-    setMealFilterSet(new Set())
-  }
+  })();
 
   return (
     <Container maxWidth="md">
@@ -145,17 +54,14 @@ const RecipeTabPanel = ({ handleRecipeSelect, selectedRecipeNameList, setSelecte
         <MealFilterBtnList mealFilterSet={mealFilterSet} setMealFilterSet={setMealFilterSet} />
       </Box>
       {Object.entries(cuisineToRecipeListMap)
-        .map(([cuisine, recipeList], idx) => (
-          <Accordion key={uniqueId()} sx={{ fontSize: '1.5rem' }}>
+        .map(([cuisine, totalRecipeList], idx) => (
+          <Accordion key={uniqueId()} sx={{ fontSize: '1.5rem' }} expanded={openDropdownObj[cuisine]} onChange={() => toggleDropdown(cuisine)}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
               {capitalize(cuisine)}
             </AccordionSummary>
             <AccordionDetails>
               <RecipeCardList
-                cuisine={cuisine}
-                recipeList={recipeList}
-                selectedRecipeNameList={selectedRecipeNameList}
-                handleRecipeSelect={handleRecipeSelect}
+                totalRecipeList={totalRecipeList}
                 mealFilterSet={mealFilterSet}
               />
             </AccordionDetails>
