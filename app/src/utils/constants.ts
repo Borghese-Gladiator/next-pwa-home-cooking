@@ -1581,13 +1581,28 @@ export const recipes: Recipe[] = [{
   "cuisine": "american",
   meal: "dinner",
   "ingredientList": [{
+    "name": "butter",
+    "category": "dairy"
+  }, {
+    "name": "flour",
+    "category": "aisle"
+  }, {
+    "name": "salt",
+    "category": "aisle"
+  }, {
+    "name": "pepper",
+    "category": "aisle"
+  }, {
+    "name": "paprika",
+    "category": "aisle"
+  },{
     "name": "pasta (elbows)",
     "category": "aisle"
   }, {
-    "name": "gruyere cheese",
+    "name": "cheddar cheese",
     "category": "dairy"
   }, {
-    "name": "mozzarella cheese",
+    "name": "gruyere cheese",
     "category": "dairy"
   },
   ]
