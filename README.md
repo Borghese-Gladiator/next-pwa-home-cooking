@@ -86,6 +86,19 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - [X] Grilled Cheese - sourdough, American cheese, butter
   - [X] Chicken Sandwich - American cheese, tomato, lettuce
   - [X] Japanese Croquette (クロッケー)
+---
+- [X] feat: add "Restaurants" modal
+  - [X] add restaurant from kyou-mo-tsuki-ga-kirei
+- [X] feat: UI update to divide by both meal type AND cuisine
+- [X] feat: write up existing recipe constants
+- [X] accordion closing on click
+- [X] favicon
+- [X] clear btn in right of tabs instead of in panel
+- [X] fix: crossing out ingredients bolds them
+- [X] add selected recipes at top in both recipes and ingredients 
+- [X] remove top embed of PWA => full screen via manifest.json
+- [X] fix: recipes panel - not sorting
+---
 - [X] feat: loading screen + remove top appbar + replace AppBar w/ tab thingy => DONE, barely used tho since loading is instant
 - [X] fix: Vercel - debug failing deploy
 - [X] feat: divide by both meal type AND cuisine
