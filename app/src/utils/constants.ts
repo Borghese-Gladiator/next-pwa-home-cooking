@@ -1632,7 +1632,504 @@ export const recipes: Recipe[] = [{
     "name": "egg",
     "category": "dairy",
   }, ]
+}, {
+  "name": "Katsudon",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "pork cutlets", "category": "meat" },
+    { "name": "eggs", "category": "dairy" },
+    { "name": "onions", "category": "produce" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "mirin", "category": "aisle" },
+    { "name": "sugar", "category": "aisle" },
+    { "name": "rice", "category": "aisle" }
+  ]
+},
+{
+  "name": "Yakitori",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken thighs", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "mirin", "category": "aisle" },
+    { "name": "sake", "category": "aisle" },
+    { "name": "green onions", "category": "produce" }
+  ]
+},
+{
+  "name": "Nigiri Sushi",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "sushi rice", "category": "aisle" },
+    { "name": "fresh fish", "category": "seafood" },
+    { "name": "shrimp", "category": "seafood" },
+    { "name": "eel", "category": "seafood" },
+    { "name": "egg", "category": "dairy" }
+  ]
+},
+{
+  "name": "Chirashi Sushi",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "sushi rice", "category": "aisle" },
+    { "name": "sashimi", "category": "seafood" },
+    { "name": "vegetables", "category": "produce" }
+  ]
+},
+{
+  "name": "Turkey Veggie Guacamole Burger",
+  "cuisine": "american",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "ground turkey", "category": "meat" },
+    { "name": "bell peppers", "category": "produce" },
+    { "name": "onions", "category": "produce" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "avocado", "category": "produce" },
+    { "name": "burger buns", "category": "aisle" }
+  ]
+},
+{
+  "name": "Potato Smash",
+  "cuisine": "american",
+  "meal": "side",
+  "ingredientList": [
+    { "name": "potatoes", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" },
+    { "name": "salt", "category": "aisle" },
+    { "name": "pepper", "category": "aisle" },
+    { "name": "herbs", "category": "produce", "optional": true }
+  ]
+},
+{
+  "name": "Fruit Salad",
+  "cuisine": "american",
+  "meal": "bake",
+  "ingredientList": [
+    { "name": "assorted fruits", "category": "produce" },
+    { "name": "honey", "category": "aisle" },
+    { "name": "lime juice", "category": "aisle" },
+    { "name": "mint leaves", "category": "produce" }
+  ]
+},
+{
+  "name": "Greek Hummus Dip",
+  "cuisine": "misc",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chickpeas", "category": "aisle" },
+    { "name": "tahini", "category": "aisle" },
+    { "name": "lemon juice", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" },
+    { "name": "salt", "category": "aisle" },
+    { "name": "pepper", "category": "aisle" },
+    { "name": "cucumber", "category": "produce" },
+    { "name": "cherry tomatoes", "category": "produce" },
+    { "name": "olives", "category": "produce" }
+  ]
+},
+{
+  "name": "Hawaiian Chicken",
+  "cuisine": "misc",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken breasts", "category": "meat" },
+    { "name": "pineapple chunks", "category": "produce" },
+    { "name": "bell peppers", "category": "produce" },
+    { "name": "onions", "category": "produce" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "brown sugar", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "ginger", "category": "produce" },
+    { "name": "rice", "category": "aisle" }
+  ]
+},
+{
+  "name": "Broccoli Pesto Pasta",
+  "cuisine": "italian",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "broccoli", "category": "produce" },
+    { "name": "pasta", "category": "aisle" },
+    { "name": "basil pesto", "category": "aisle" },
+    { "name": "Parmesan cheese", "category": "dairy" }
+  ]
+},
+{
+  "name": "Parmesan Chicken Tenders",
+  "cuisine": "american",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken tenders", "category": "meat" },
+    { "name": "bread crumbs", "category": "aisle" },
+    { "name": "Parmesan cheese", "category": "dairy" },
+    { "name": "garlic powder", "category": "aisle" },
+    { "name": "Italian seasoning", "category": "aisle" },
+    { "name": "eggs", "category": "dairy" }
+  ]
+},
+{
+  "name": "Spaghetti with Crockpot Meatballs",
+  "cuisine": "italian",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "ground beef", "category": "meat" },
+    { "name": "bread crumbs", "category": "aisle" },
+    { "name": "Parmesan cheese", "category": "dairy" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "onion", "category": "produce" },
+    { "name": "eggs", "category": "dairy" },
+    { "name": "marinara sauce", "category": "aisle" },
+    { "name": "spaghetti", "category": "aisle" }
+  ]
+},
+{
+  "name": "Grilled Shrimp & Veggie Kebabs",
+  "cuisine": "american",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "shrimp", "category": "seafood" },
+    { "name": "bell peppers", "category": "produce" },
+    { "name": "cherry tomatoes", "category": "produce" },
+    { "name": "onions", "category": "produce" },
+    { "name": "zucchini", "category": "produce" },
+    { "name": "lemon", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" },
+    { "name": "salt", "category": "aisle" },
+    { "name": "pepper", "category": "aisle" },
+    { "name": "wooden skewers", "category": "tool" }
+  ]
+},
+{
+  "name": "Sweet and Spicy Grilled Chicken",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken breasts", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "honey", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "ginger", "category": "produce" },
+    { "name": "chili flakes", "category": "aisle" }
+  ]
+},
+{
+  "name": "Grilled Steak & Veggie Fajitas",
+  "cuisine": "mexican",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "steak", "category": "meat" },
+    { "name": "bell peppers", "category": "produce" },
+    { "name": "onions", "category": "produce" },
+    { "name": "tortillas", "category": "aisle" },
+    { "name": "lime", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" },
+    { "name": "salt", "category": "aisle" },
+    { "name": "pepper", "category": "aisle" },
+    { "name": "cumin", "category": "aisle" },
+    { "name": "chili powder", "category": "aisle" }
+  ]
+},
+{
+  "name": "Hummus",
+  "cuisine": "misc",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chickpeas", "category": "aisle" },
+    { "name": "tahini", "category": "aisle" },
+    { "name": "lemon juice", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" },
+    { "name": "salt", "category": "aisle" },
+    { "name": "pepper", "category": "aisle" }
+  ]
+},
+{
+  "name": "Cucumber Salad",
+  "cuisine": "american",
+  "meal": "side",
+  "ingredientList": [
+    { "name": "cucumber", "category": "produce" },
+    { "name": "pepper", "category": "aisle" },
+    { "name": "vinegar", "category": "aisle" }
+  ]
+},
+{
+  "name": "红烧",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "米酒", "category": "aisle" },
+    { "name": "酱油", "category": "aisle" },
+    { "name": "盐", "category": "aisle" },
+    { "name": "糖", "category": "aisle" },
+    { "name": "鸡", "category": "meat" }
+  ]
+},
+{
+  "name": "Chili",
+  "cuisine": "american",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "ground beef", "category": "meat" },
+    { "name": "beans", "category": "aisle" },
+    { "name": "tomato", "category": "produce" },
+    { "name": "onion", "category": "produce" },
+    { "name": "chili powder", "category": "aisle" },
+    { "name": "garlic", "category": "produce" }
+  ],
+  "recipeLink": "https://m.youtube.com/watch?v=ZT3GlECfYoU&pp=ygUMY2hpbGkgcmVjaXBl"
+},
+{
+  "name": "炸酱面",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "noodles", "category": "aisle" },
+    { "name": "pork", "category": "meat" },
+    { "name": "bean paste", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "scallions", "category": "produce" }
+  ]
+},
+{
+  "name": "三杯鸡",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "rice wine", "category": "aisle" },
+    { "name": "sesame oil", "category": "aisle" },
+    { "name": "basil", "category": "produce" }
+  ]
+},
+{
+  "name": "Spaghetti Sauce",
+  "cuisine": "italian",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "ground beef", "category": "meat" },
+    { "name": "sausage", "category": "meat" },
+    { "name": "mushrooms", "category": "produce" },
+    { "name": "bell pepper", "category": "produce" },
+    { "name": "onion", "category": "produce" },
+    { "name": "marinara sauce", "category": "aisle" }
+  ]
+},
+{
+  "name": "Cooked Spaghetti Noodles",
+  "cuisine": "italian",
+  "meal": "side",
+  "ingredientList": [
+    { "name": "spaghetti noodles", "category": "aisle" },
+    { "name": "parsley", "category": "produce" },
+    { "name": "olive oil", "category": "aisle" }
+  ]
+},
+{
+  "name": "Garlic Bread",
+  "cuisine": "italian",
+  "meal": "side",
+  "ingredientList": [
+    { "name": "bread", "category": "aisle" },
+    { "name": "butter", "category": "dairy" },
+    { "name": "garlic", "category": "produce" }
+  ]
+},
+{
+  "name": "Green Bean Casserole",
+  "cuisine": "american",
+  "meal": "side",
+  "ingredientList": [
+    { "name": "green beans", "category": "produce" },
+    { "name": "cream of mushroom soup", "category": "dairy" },
+    { "name": "fried onions", "category": "aisle" }
+  ]
+},
+{
+  "name": "Chicken Parm Dinner",
+  "cuisine": "italian",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken breasts", "category": "meat" },
+    { "name": "marinara sauce", "category": "aisle" },
+    { "name": "mozzarella cheese", "category": "dairy" },
+    { "name": "Parmesan cheese", "category": "dairy" },
+    { "name": "bread crumbs", "category": "aisle" }
+  ]
+},
+{
+  "name": "Chicken Pad Thai",
+  "cuisine": "thai",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken", "category": "meat" },
+    { "name": "rice noodles", "category": "aisle" },
+    { "name": "peanuts", "category": "nut" },
+    { "name": "bean sprouts", "category": "produce" },
+    { "name": "lime", "category": "produce" },
+    { "name": "fish sauce", "category": "aisle" }
+  ]
+},
+{
+  "name": "Pineapple Fried Rice",
+  "cuisine": "thai",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "rice", "category": "aisle" },
+    { "name": "pineapple", "category": "produce" },
+    { "name": "shrimp", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "garlic", "category": "produce" }
+  ]
+},
+{
+  "name": "Yellow Curry",
+  "cuisine": "thai",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken", "category": "meat" },
+    { "name": "coconut milk", "category": "dairy" },
+    { "name": "yellow curry paste", "category": "aisle" },
+    { "name": "potatoes", "category": "produce" },
+    { "name": "carrots", "category": "produce" }
+  ]
+},
+{
+  "name": "Szechuan Beef",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "beef", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "Szechuan peppercorns", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "ginger", "category": "produce" }
+  ],
+  "recipeLink": "https://youtube.com/shorts/1QWIZ-cjm0E?si=nfBFOYEd2DzMfMUK"
+},
+{
+  "name": "Black Pepper Beef",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "beef", "category": "meat" },
+    { "name": "black pepper", "category": "aisle" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "bell pepper", "category": "produce" }
+  ],
+  "recipeLink": "https://youtube.com/shorts/d6lsWxqMDjw?si=q7tbpdDPopfiI3YJ"
+},
+{
+  "name": "Spicy Garlic Parmesan Skewers",
+  "cuisine": "american",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chicken", "category": "meat" },
+    { "name": "Parmesan cheese", "category": "dairy" },
+    { "name": "garlic", "category": "produce" },
+    { "name": "chili flakes", "category": "aisle" }
+  ],
+  "recipeLink": "https://www.youtube.com/shorts/YFIxbMmhctA"
+},
+{
+  "name": "Chickpea Curry",
+  "cuisine": "indian",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "chickpeas", "category": "aisle" },
+    { "name": "curry paste", "category": "aisle" },
+    { "name": "coconut milk", "category": "dairy" },
+    { "name": "tomato", "category": "produce" }
+  ],
+  "recipeLink": "https://www.youtube.com/shorts/naEpZKwbE_c"
+},
+{
+  "name": "Omelette Rice",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "rice", "category": "aisle" },
+    { "name": "eggs", "category": "dairy" },
+    { "name": "ketchup", "category": "aisle" },
+    { "name": "chicken", "category": "meat" }
+  ],
+  "recipeLink": "https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g"
+},
+{
+  "name": "Cantonese Steamed Fish",
+  "cuisine": "chinese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "fish", "category": "meat" },
+    { "name": "soy sauce", "category": "aisle" },
+    { "name": "ginger", "category": "produce" },
+    { "name": "scallions", "category": "produce" }
+  ],
+  "recipeLink": "https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu"
+},
+{
+  "name": "Banana Bread",
+  "cuisine": "american",
+  "meal": "bake",
+  "ingredientList": [
+    { "name": "bananas", "category": "produce" },
+    { "name": "flour", "category": "aisle" },
+    { "name": "sugar", "category": "aisle" },
+    { "name": "eggs", "category": "dairy" }
+  ]
+},
+{
+  "name": "Cheesecake",
+  "cuisine": "american",
+  "meal": "bake",
+  "ingredientList": [
+    { "name": "cottage cheese", "category": "dairy" },
+    { "name": "yogurt", "category": "dairy" },
+    { "name": "eggs", "category": "dairy" },
+    { "name": "fruit toppings", "category": "produce" }
+  ]
+},
+{
+  "name": "Grilled Cheese",
+  "cuisine": "american",
+  "meal": "lunch",
+  "ingredientList": [
+    { "name": "sourdough", "category": "aisle" },
+    { "name": "American cheese", "category": "dairy" },
+    { "name": "butter", "category": "dairy" }
+  ]
+},
+{
+  "name": "Chicken Sandwich",
+  "cuisine": "american",
+  "meal": "lunch",
+  "ingredientList": [
+    { "name": "chicken", "category": "meat" },
+    { "name": "American cheese", "category": "dairy" },
+    { "name": "tomato", "category": "produce" },
+    { "name": "lettuce", "category": "produce" }
+  ]
+},
+{
+  "name": "Japanese Croquette (クロッケー)",
+  "cuisine": "japanese",
+  "meal": "dinner",
+  "ingredientList": [
+    { "name": "potatoes", "category": "produce" },
+    { "name": "ground beef", "category": "meat" },
+    { "name": "onion", "category": "produce" },
+    { "name": "panko", "category": "aisle" }
+  ]
 }
+
 ].map((curr: any) => {
   // add default values
   return {

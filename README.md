@@ -11,7 +11,16 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
-- [ ] write up below content
+- [ ] ref: create custom hook for selected recipes
+- [ ] feat: dark mode
+- [ ] feat: ingredients tab - click Chip to highlight ingredients
+- [ ] add optional cooking instructions
+- [ ] fix: boost performance by removing extra loops and utilizing IDs
+- [ ] ref: docs - jsdoc per method to clarify logic
+
+## Done
+
+- [X] write up below content
   - [X] 卤肉饭
   - [X] Ginger pork belly
   - [X] Miso salmon
@@ -24,72 +33,59 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
   - [X] Kung Pao Chicken (Gong Bao Ji Ding): Tender chicken, peanuts, and dried chili peppers in a sweet and spicy sauce with Sichuan peppercorns for a numbing kick.
   - [X] Dan Dan Noodles (Dan Dan Mian): Spicy noodles topped with a savory sauce made from sesame paste, chili oil, minced meat, and crushed peanuts.
   - [X] Twice-Cooked Pork (Hui Guo Rou): Slices of boiled pork belly stir-fried with leeks, garlic, and fermented black beans for a rich and flavorful dish.
-  - [ ] Sushi Rolls (Maki) - Nori sheets, sushi rice, fresh fish, avocado, cucumber | Make your own sushi rolls using nori (seaweed) sheets, sushi rice, and a variety of fillings like fresh fish, avocado, cucumber, and more. 
-  - [ ] Tempura - Seafood (shrimp, squid, etc.), vegetables (sweet potatoes, zucchini, etc.), mushrooms, tempura batter, tentsuyu sauce | Lightly batter and deep-fry seafood, vegetables, and mushrooms. Serve with a dipping sauce like tentsuyu. 
+  - [X] Sushi Rolls (Maki) - Nori sheets, sushi rice, fresh fish, avocado, cucumber | Make your own sushi rolls using nori (seaweed) sheets, sushi rice, and a variety of fillings like fresh fish, avocado, cucumber, and more. 
+  - [X] Tempura - Seafood (shrimp, squid, etc.), vegetables (sweet potatoes, zucchini, etc.), mushrooms, tempura batter, tentsuyu sauce | Lightly batter and deep-fry seafood, vegetables, and mushrooms. Serve with a dipping sauce like tentsuyu. 
   - [X] Teriyaki Chicken - Chicken thighs, soy sauce, mirin, sugar, vegetable oil | Grill or pan-fry chicken glazed with a sweet and savory teriyaki sauce made from soy sauce, mirin, and sugar. 
   - [X] Miso Soup - Dashi stock, miso paste, tofu, seaweed, green onions | Prepare a simple and comforting soup using dashi (fish and seaweed broth) and miso paste. Add tofu, seaweed, and green onions.
   - [X] Gyoza - Ground pork, cabbage, garlic, ginger, gyoza wrappers, soy sauce, sesame oil | Fill gyoza wrappers with a mixture of ground pork, cabbage, and garlic. Pan-fry until crispy on the bottom.
-  - [X] Sesame Chicken
-  - [ ] Katsudon - Pork cutlets, eggs, onions, soy sauce, mirin, sugar, rice | Deep-fry breaded pork cutlets and serve with eggs and onions in a sweet and savory sauce over rice.
-  - [ ] Yakitori - Chicken thighs, soy sauce, mirin, sake, green onions | Skewer and grill chicken pieces, seasoning with a glaze made from soy sauce, mirin, and sake. 
-  - [ ] Nigiri Sushi - Sushi rice, fresh fish, shrimp, eel, egg | Hand-press sushi rice and top with slices of fresh fish or other ingredients like shrimp, eel, or egg.
-  - [ ] Chirashi Sushi - Sushi rice, sashimi (tuna, salmon, etc.), vegetables (cucumber, avocado, etc.) | Prepare a vibrant sushi bowl with sushi rice topped with a variety of sashimi, vegetables, and other toppings.
-  - [ ] Turkey Veggie Guacamole Burger - Ground turkey, bell peppers, onions, garlic, avocado, burger buns | Grill ground turkey patties mixed with finely chopped bell peppers, onions, and garlic. Serve on burger buns with mashed avocado.
-  - [ ] Potato Smash - Potatoes, olive oil, salt, pepper, optional herbs | Boil potatoes until tender, then smash them with a fork or potato masher. Drizzle with olive oil and season with salt, pepper, and optional herbs. Bake until crispy.
-  - [ ] Fruit Salad - Assorted fruits (e.g., strawberries, grapes, pineapple, kiwi, mango), honey, lime juice, mint leaves | Chop fruits and toss them together with honey, lime juice, and fresh mint leaves.
-  - [ ] Greek Hummus Dip - Chickpeas, tahini, lemon juice, garlic, olive oil, salt, pepper, cucumber, cherry tomatoes, olives | Blend chickpeas, tahini, lemon juice, garlic, olive oil, salt, and pepper until smooth. Serve with sliced cucumber, cherry tomatoes, and olives for dipping.
-  - [ ] Raw Veggie Kababs - Assorted vegetables (e.g., bell peppers, cherry tomatoes, mushrooms, zucchini, onions), wooden skewers | Thread assorted vegetables onto wooden skewers. Serve raw as kababs.
-  - [ ] Hawaiian Chicken - Chicken breasts, pineapple chunks, bell peppers, onions, soy sauce, brown sugar, garlic, ginger, rice | Marinate chicken breasts in a mixture of soy sauce, brown sugar, garlic, and ginger. Grill chicken along with pineapple chunks, bell peppers, and onions. Serve over rice.
-  - [ ] Broccoli Pesto Pasta - Broccoli, pasta, basil pesto, Parmesan cheese | Cook pasta according to package instructions. Steam broccoli until tender. Toss cooked pasta and broccoli with basil pesto. Serve with grated Parmesan cheese.
-  - [ ] Parmesan Chicken Tenders - Chicken tenders, bread crumbs, Parmesan cheese, garlic powder, Italian seasoning, eggs | Dip chicken tenders in beaten eggs, then coat with a mixture of bread crumbs, Parmesan cheese, garlic powder, and Italian seasoning. Bake until golden and cooked through.
-  - [ ] Spaghetti with Crockpot Meatballs - Ground beef, bread crumbs, Parmesan cheese, garlic, onion, eggs, marinara sauce, spaghetti | Mix together ground beef, bread crumbs, Parmesan cheese, minced garlic, minced onion, and eggs. Form into meatballs and cook in a crockpot with marinara sauce. Serve over cooked spaghetti.
-  - [ ] Grilled Shrimp & Veggie Kebabs - Shrimp, bell peppers, cherry tomatoes, onions, zucchini, lemon, olive oil, salt, pepper, wooden skewers | Thread shrimp and assorted vegetables onto wooden skewers. Drizzle with olive oil, season with salt and pepper, and grill until shrimp is cooked through.
-  - [ ] Sweet and Spicy Grilled Chicken - Chicken breasts, soy sauce, honey, garlic, ginger, chili flakes | Marinate chicken breasts in a mixture of soy sauce, honey, minced garlic, minced ginger, and chili flakes. Grill until cooked through.
-  - [ ] Grilled Steak & Veggie Fajitas - Steak (e.g., flank steak), bell peppers, onions, tortillas, lime, olive oil, salt, pepper, cumin, chili powder | Marinate steak in a mixture of lime juice, olive oil, salt, pepper, cumin, and chili powder. Grill steak along with sliced bell peppers and onions. Serve with warm tortillas
+  - [X] Sesame Chicken - chicken, cornstarch, soy sauce, rice vinegar, honey, brown sugar, sesame oil
+  - [X] Mac N Cheese - https://youtube.com/shorts/tyt5l3dNhCM?si=jsfRy4ppaOImJ5jZ
   - [X] 椒盐虾
-  - [ ] Pakistani Dinner
+  - [X] Katsudon - Pork cutlets, eggs, onions, soy sauce, mirin, sugar, rice | Deep-fry breaded pork cutlets and serve with eggs and onions in a sweet and savory sauce over rice.
+  - [X] Yakitori - Chicken thighs, soy sauce, mirin, sake, green onions | Skewer and grill chicken pieces, seasoning with a glaze made from soy sauce, mirin, and sake. 
+  - [X] Nigiri Sushi - Sushi rice, fresh fish, shrimp, eel, egg | Hand-press sushi rice and top with slices of fresh fish or other ingredients like shrimp, eel, or egg.
+  - [X] Chirashi Sushi - Sushi rice, sashimi (tuna, salmon, etc.), vegetables (cucumber, avocado, etc.) | Prepare a vibrant sushi bowl with sushi rice topped with a variety of sashimi, vegetables, and other toppings.
+  - [X] Turkey Veggie Guacamole Burger - Ground turkey, bell peppers, onions, garlic, avocado, burger buns | Grill ground turkey patties mixed with finely chopped bell peppers, onions, and garlic. Serve on burger buns with mashed avocado.
+  - [X] Potato Smash - Potatoes, olive oil, salt, pepper, optional herbs | Boil potatoes until tender, then smash them with a fork or potato masher. Drizzle with olive oil and season with salt, pepper, and optional herbs. Bake until crispy.
+  - [X] Fruit Salad - Assorted fruits (e.g., strawberries, grapes, pineapple, kiwi, mango), honey, lime juice, mint leaves | Chop fruits and toss them together with honey, lime juice, and fresh mint leaves.
+  - [X] Greek Hummus Dip - Chickpeas, tahini, lemon juice, garlic, olive oil, salt, pepper, cucumber, cherry tomatoes, olives | Blend chickpeas, tahini, lemon juice, garlic, olive oil, salt, and pepper until smooth. Serve with sliced cucumber, cherry tomatoes, and olives for dipping.
+  - [X] Raw Veggie Kababs - Assorted vegetables (e.g., bell peppers, cherry tomatoes, mushrooms, zucchini, onions), wooden skewers | Thread assorted vegetables onto wooden skewers. Serve raw as kababs.
+  - [X] Hawaiian Chicken - Chicken breasts, pineapple chunks, bell peppers, onions, soy sauce, brown sugar, garlic, ginger, rice | Marinate chicken breasts in a mixture of soy sauce, brown sugar, garlic, and ginger. Grill chicken along with pineapple chunks, bell peppers, and onions. Serve over rice.
+  - [X] Broccoli Pesto Pasta - Broccoli, pasta, basil pesto, Parmesan cheese | Cook pasta according to package instructions. Steam broccoli until tender. Toss cooked pasta and broccoli with basil pesto. Serve with grated Parmesan cheese.
+  - [X] Parmesan Chicken Tenders - Chicken tenders, bread crumbs, Parmesan cheese, garlic powder, Italian seasoning, eggs | Dip chicken tenders in beaten eggs, then coat with a mixture of bread crumbs, Parmesan cheese, garlic powder, and Italian seasoning. Bake until golden and cooked through.
+  - [X] Spaghetti with Crockpot Meatballs - Ground beef, bread crumbs, Parmesan cheese, garlic, onion, eggs, marinara sauce, spaghetti | Mix together ground beef, bread crumbs, Parmesan cheese, minced garlic, minced onion, and eggs. Form into meatballs and cook in a crockpot with marinara sauce. Serve over cooked spaghetti.
+  - [X] Grilled Shrimp & Veggie Kebabs - Shrimp, bell peppers, cherry tomatoes, onions, zucchini, lemon, olive oil, salt, pepper, wooden skewers | Thread shrimp and assorted vegetables onto wooden skewers. Drizzle with olive oil, season with salt and pepper, and grill until shrimp is cooked through.
+  - [X] Sweet and Spicy Grilled Chicken - Chicken breasts, soy sauce, honey, garlic, ginger, chili flakes | Marinate chicken breasts in a mixture of soy sauce, honey, minced garlic, minced ginger, and chili flakes. Grill until cooked through.
+  - [X] Grilled Steak & Veggie Fajitas - Steak (e.g., flank steak), bell peppers, onions, tortillas, lime, olive oil, salt, pepper, cumin, chili powder | Marinate steak in a mixture of lime juice, olive oil, salt, pepper, cumin, and chili powder. Grill steak along with sliced bell peppers and onions. Serve with warm tortillas
+  - [X] Pakistani Dinner
     - chicken rice
     - hummus
     - garlic hummus
     - cucumer salad - pepper, vinegar
     - kebabs 
-  - 红烧 - 米酒, 酱油, 盐, 唐, 鸡
-  - chili - https://m.youtube.com/watch?v=ZT3GlECfYoU&pp=ygUMY2hpbGkgcmVjaXBl
-  - 炸酱面
-  - 三杯鸡
-  - huge crockpot of spaghetti sauce with meat and veggies like mushrooms bell pepper onion sausage and hamburger
-  - large tray of cooked spaghetti noodles with parsley and oil
-  - garlic bread
-  - Green beans casserole 
-  - Chicken Parm Dinner
-  - Chicken Pad Thai
-  - Pineapple Fried Rice
-  - Yellow Curry
-  - Szechuan Beef - https://youtube.com/shorts/1QWIZ-cjm0E?si=nfBFOYEd2DzMfMUK
-  - Black Pepper Beef - https://youtube.com/shorts/d6lsWxqMDjw?si=q7tbpdDPopfiI3YJ
-  - Mac N Cheese - https://youtube.com/shorts/tyt5l3dNhCM?si=jsfRy4ppaOImJ5jZ
-  - Spicy Garlic Parmesan skewers - https://www.youtube.com/shorts/YFIxbMmhctA
-  - Chickpea Curry - https://www.youtube.com/shorts/naEpZKwbE_c
-  - Omelette Rice - https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g
-  - Cantonese Steamed Fish - https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu
-  - Bake
-    - Banana Bread
-    - Cheesecake - cottage cheese, yogurt, egg, toppings (strawberries)
-  - Sesame Chicken - chicken, cornstarch, soy sauce, rice vinegar, honey, brown sugar, sesame oil
-  - Mac N Cheese
-  - Grilled Cheese - sourdough, American cheese, butter
-  - Chicken Sandwich - American cheese, tomato, lettuce
-  - Japanese Croquette (クロッケー)
-  - Tartar Sauce
----
-- [ ] ref: create custom hook for selected recipes
-- [ ] feat: dark mode
-- [ ] feat: ingredients tab - click Chip to highlight ingredients
-- [ ] add optional cooking instructions
-- [ ] fix: boost performance by removing extra loops and utilizing IDs
-- [ ] ref: docs - jsdoc per method to clarify logic
-
-## Done
+  - [X] 红烧 - 米酒, 酱油, 盐, 唐, 鸡
+  - [X] chili - https://m.youtube.com/watch?v=ZT3GlECfYoU&pp=ygUMY2hpbGkgcmVjaXBl
+  - [X] 炸酱面
+  - [X] 三杯鸡
+  - [X] huge crockpot of spaghetti sauce with meat and veggies like mushrooms bell pepper onion sausage and hamburger
+  - [X] large tray of cooked spaghetti noodles with parsley and oil
+  - [X] garlic bread
+  - [X] Green beans casserole 
+  - [X] Chicken Parm Dinner
+  - [X] Chicken Pad Thai
+  - [X] Pineapple Fried Rice
+  - [X] Yellow Curry
+  - [X] Szechuan Beef - https://youtube.com/shorts/1QWIZ-cjm0E?si=nfBFOYEd2DzMfMUK
+  - [X] Black Pepper Beef - https://youtube.com/shorts/d6lsWxqMDjw?si=q7tbpdDPopfiI3YJ
+  - [X] Spicy Garlic Parmesan skewers - https://www.youtube.com/shorts/YFIxbMmhctA
+  - [X] Chickpea Curry - https://www.youtube.com/shorts/naEpZKwbE_c
+  - [X] Omelette Rice - https://youtube.com/shorts/QMSnLNPC4kQ?si=uqePWobw3ddhfL2g
+  - [X] Cantonese Steamed Fish - https://youtube.com/shorts/tXgTlWtA8_M?si=YOoVCArdObNZl7pu
+  - [X] Banana Bread
+  - [X] Cheesecake - cottage cheese, yogurt, egg, toppings (strawberries)
+  - [X] Grilled Cheese - sourdough, American cheese, butter
+  - [X] Chicken Sandwich - American cheese, tomato, lettuce
+  - [X] Japanese Croquette (クロッケー)
 - [X] feat: loading screen + remove top appbar + replace AppBar w/ tab thingy => DONE, barely used tho since loading is instant
 - [X] fix: Vercel - debug failing deploy
 - [X] feat: divide by both meal type AND cuisine
@@ -115,8 +111,8 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 Forgot to rename files to `tsx` resulting in weird errors when `ts` like `div not recognized`
 
 ## Iced
-- [ ] feat: write translation strings for each recipe
-- [ ] feat: color each group
+- [X] feat: write translation strings for each recipe
+- [X] feat: color each group
 
 <details>
 <summary>Old Changes</summary>
