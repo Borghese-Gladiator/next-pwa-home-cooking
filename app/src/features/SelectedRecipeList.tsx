@@ -1,5 +1,6 @@
 import { Box, Chip } from "@mui/material";
 import useRecipeNamesList from "../hooks/useRecipeNamesList";
+import { uniqueId } from "lodash";
 
 const SelectedRecipeList = () => {
   const { selectedRecipes } = useRecipeNamesList();
@@ -10,7 +11,7 @@ const SelectedRecipeList = () => {
     }}>
       {Array.from(selectedRecipes).map((name) => {
         return (
-          <Chip label={name} sx={{ fontWeight: 'bold', textTransform: 'capitalize' }} />
+          <Chip label={name} sx={{ fontWeight: 'bold', textTransform: 'capitalize' }} key={uniqueId()} />
         )
       })}
     </Box>
