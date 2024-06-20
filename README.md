@@ -19,7 +19,7 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - [ ] ref: docs - jsdoc per method to clarify logic
 
 ## Done
-
+- [X] fix: Vercel build issue - missing key prop
 - [X] write up below content
   - [X] 卤肉饭
   - [X] Ginger pork belly
