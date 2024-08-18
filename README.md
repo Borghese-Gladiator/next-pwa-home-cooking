@@ -11,12 +11,19 @@ I wrote down my recipes with ingredients and had ChatGPT classify them so I can 
 - `/archive` - previous project I forgot about that I just copy-pasted here cuz it's mostly the same
 
 ## To Do
+- [ ] date night recipes
+	- Sausage Bolognese (check the meat, I got no pasta machine tho) - https://youtube.com/shorts/vjtElH_af30?si=kwkY-vY4DAJgGOuN
+	- Sesame Chicken - https://youtube.com/shorts/Nl0unk60Wqs?si=Fo7ooszESoUvWDto
+	- Marry Me Chicken - https://youtube.com/shorts/5eSvGgT74s0?si=sxq-mK0avCtkzRBu
+	- Pesto Orzo & Crispy Salmon - https://youtube.com/shorts/zMDKjmnS5hc?si=eXkyMYC8rxhk0esw
+	- Elote (creamed corn, queso fresco, cilantro, lime, jalapeno)
 - [ ] ref: create custom hook for selected recipes
 - [ ] feat: dark mode
 - [ ] feat: ingredients tab - click Chip to highlight ingredients
 - [ ] add optional cooking instructions
 - [ ] fix: boost performance by removing extra loops and utilizing IDs
 - [ ] ref: docs - jsdoc per method to clarify logic
+
 
 ## Done
 - [X] fix: Vercel build issue - missing key prop
